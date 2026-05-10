@@ -182,7 +182,7 @@ export default function Projects() {
 
   return (
     <SectionWrapper id="projects">
-      <div className="mx-auto px-6 md:px-12 lg:px-20" style={{ maxWidth: '1400px', paddingTop: '100px', paddingBottom: '80px' }}>
+      <div className="mx-auto px-6 md:px-12 lg:px-20" style={{ maxWidth: '1400px', paddingTop: 'clamp(60px, 10vh, 100px)', paddingBottom: '80px' }}>
         {/* Section header */}
         <motion.div variants={childVariants}>
           <p className="section-label">// 03 PROJECTS</p>
@@ -194,7 +194,7 @@ export default function Projects() {
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 340px), 1fr))',
+            gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 280px), 1fr))',
             gap: '20px',
           }}
         >

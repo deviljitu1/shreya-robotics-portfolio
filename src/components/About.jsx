@@ -132,7 +132,7 @@ export default function About() {
 
   return (
     <SectionWrapper id="about">
-      <div className="mx-auto px-6 md:px-12 lg:px-20" style={{ maxWidth: '1400px', paddingTop: '100px', paddingBottom: '80px' }}>
+      <div className="mx-auto px-6 md:px-12 lg:px-20" style={{ maxWidth: '1400px', paddingTop: 'clamp(60px, 10vh, 100px)', paddingBottom: '80px' }}>
         {/* Section header */}
         <motion.div variants={childVariants}>
           <p className="section-label">// 01 ABOUT</p>
@@ -143,7 +143,7 @@ export default function About() {
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 380px), 1fr))',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))',
             gap: '48px',
             alignItems: 'start',
           }}

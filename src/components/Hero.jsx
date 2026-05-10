@@ -57,7 +57,7 @@ export default function Hero() {
     <section
       id="hero"
       className="relative overflow-hidden"
-      style={{ minHeight: '100vh', paddingTop: '120px' }}
+      style={{ minHeight: '100vh', paddingTop: 'clamp(80px, 15vh, 120px)' }}
     >
       {/* Particle canvas — behind everything */}
       <ParticleField count={200} />
@@ -67,7 +67,7 @@ export default function Hero() {
         style={{
           display: 'grid',
           gridTemplateColumns: '1fr',
-          gap: '40px',
+          gap: '24px',
           maxWidth: '1400px',
         }}
       >
@@ -105,7 +105,7 @@ export default function Hero() {
                     animate="visible"
                     style={{
                       fontFamily: 'Orbitron, monospace',
-                      fontSize: 'clamp(3rem, 8vw, 6rem)',
+                      fontSize: 'clamp(2.5rem, 12vw, 6rem)',
                       fontWeight: 900,
                       color: '#E8F4F8',
                       lineHeight: 1,
@@ -127,7 +127,7 @@ export default function Hero() {
                     className="text-stroke-cyan"
                     style={{
                       fontFamily: 'Orbitron, monospace',
-                      fontSize: 'clamp(3rem, 8vw, 6rem)',
+                      fontSize: 'clamp(2.5rem, 12vw, 6rem)',
                       fontWeight: 900,
                       lineHeight: 1,
                       display: 'inline-block',
@@ -178,7 +178,7 @@ export default function Hero() {
               transition={{ delay: 1.0 }}
               style={{
                 fontFamily: 'Rajdhani, sans-serif',
-                fontSize: '24px',
+                fontSize: 'clamp(18px, 4vw, 24px)',
                 fontWeight: 600,
                 color: '#00E5FF',
                 marginTop: '24px',
@@ -188,6 +188,33 @@ export default function Hero() {
               {typewriterText}
               <span className="blink-cursor" style={{ color: '#00E5FF' }}>▮</span>
             </motion.div>
+
+            {/* Mobile Stat Chips */}
+            <div className="flex md:hidden flex-wrap gap-2 mt-6">
+              {stats.map((stat, i) => (
+                <motion.div
+                  key={`mobile-stat-${stat.id}`}
+                  initial={{ opacity: 0, x: -10 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 1.2 + i * 0.1 }}
+                  style={{
+                    background: 'rgba(6, 20, 40, 0.4)',
+                    border: '1px solid rgba(0,229,255,0.15)',
+                    borderRadius: '999px',
+                    padding: '4px 12px',
+                    fontFamily: 'DM Mono, monospace',
+                    fontSize: '10px',
+                    color: '#00E5FF',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '4px',
+                  }}
+                >
+                  <span style={{ color: '#4A7A94' }}>{stat.label}</span>
+                  <span>{stat.value}</span>
+                </motion.div>
+              ))}
+            </div>
 
             {/* Bio */}
             <motion.p
@@ -255,12 +282,9 @@ export default function Hero() {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.8, duration: 1 }}
-            className="hidden md:block relative"
+            className="hidden md:flex relative items-center justify-center"
             style={{
               minHeight: '450px',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
             }}
           >
             <Suspense fallback={null}>

@@ -11,6 +11,7 @@ export default function GlowCard({
   const [tilt, setTilt] = useState({ rotateX: 0, rotateY: 0 });
 
   const handleMouseMove = (e) => {
+    if (window.innerWidth < 768) return;
     const card = cardRef.current;
     if (!card) return;
     const rect = card.getBoundingClientRect();

@@ -127,7 +127,7 @@ export default function Navbar() {
 
           {/* Mobile hamburger */}
           <button
-            className="md:hidden"
+            className="md:hidden flex items-center"
             onClick={() => setMenuOpen(!menuOpen)}
             style={{
               background: 'transparent',
@@ -135,8 +135,6 @@ export default function Navbar() {
               color: '#00E5FF',
               cursor: 'pointer',
               padding: '8px 12px',
-              display: 'flex',
-              alignItems: 'center',
             }}
             aria-label={menuOpen ? 'Close menu' : 'Open menu'}
             aria-expanded={menuOpen}

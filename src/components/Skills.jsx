@@ -147,10 +147,10 @@ export default function Skills() {
           ref={gaugeRef}
           variants={childVariants}
           style={{
-            display: 'flex',
-            flexWrap: 'wrap',
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(100px, 1fr))',
+            gap: '24px',
             justifyContent: 'center',
-            gap: '32px',
           }}
         >
           {softSkills.map((skill) => (
