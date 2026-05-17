@@ -56,8 +56,8 @@ export default function Gallery() {
 
   const categories = ['ALL', 'ROBOTICS', 'CAD DESIGN', 'IoT'];
 
-  const filteredItems = filter === 'ALL' 
-    ? galleryItems 
+  const filteredItems = filter === 'ALL'
+    ? galleryItems
     : galleryItems.filter(item => item.category === filter);
 
   const openModal = (project) => {
@@ -78,7 +78,7 @@ export default function Gallery() {
   return (
     <section id="gallery" style={{ backgroundColor: '#0A0A0A', padding: '80px 5%', minHeight: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
       <div className="w-full max-w-[1000px] mx-auto">
-        
+
         {/* Section Title */}
         <div style={{ display: 'flex', alignItems: 'center', marginBottom: '40px' }}>
           <div style={{ width: '40px', height: '2px', backgroundColor: '#555', marginRight: '16px', position: 'relative' }}>
@@ -123,7 +123,7 @@ export default function Gallery() {
         </div>
 
         {/* Grid */}
-        <motion.div 
+        <motion.div
           layout
           style={{
             display: 'grid',
@@ -153,7 +153,7 @@ export default function Gallery() {
               >
                 <div style={{ width: '100%', paddingTop: '70%', position: 'relative', overflow: 'hidden' }}>
                   {isVideo(item.images[0]) ? (
-                    <video 
+                    <video
                       src={item.images[0]}
                       muted
                       loop
@@ -168,8 +168,8 @@ export default function Gallery() {
                       }}
                     />
                   ) : (
-                    <img 
-                      src={item.images[0]} 
+                    <img
+                      src={item.images[0]}
                       alt={item.title}
                       style={{
                         position: 'absolute',
@@ -284,7 +284,7 @@ export default function Gallery() {
             >
               {/* Left Column - Image Viewer */}
               <div className="w-full md:w-[60%] flex flex-col bg-[#0A0A0A]">
-                
+
                 {/* Main Active Image / Video */}
                 <div className="relative w-full flex-1 flex items-center justify-center p-4 min-h-[300px] md:min-h-[500px]">
                   {isVideo(selectedProject.images[currentImageIndex]) ? (
@@ -345,10 +345,10 @@ export default function Gallery() {
 
               {/* Right Column - Project Details */}
               <div className="w-full md:w-[40%] p-8 flex flex-col border-t md:border-t-0 md:border-l border-[#333] overflow-y-auto">
-                <span style={{ 
-                  fontFamily: "'Inter', sans-serif", 
-                  fontSize: '12px', 
-                  fontWeight: 800, 
+                <span style={{
+                  fontFamily: "'Inter', sans-serif",
+                  fontSize: '12px',
+                  fontWeight: 800,
                   letterSpacing: '0.1em',
                   color: '#FFB400',
                   textTransform: 'uppercase',
@@ -357,10 +357,10 @@ export default function Gallery() {
                 }}>
                   {selectedProject.category}
                 </span>
-                
-                <h2 style={{ 
-                  fontFamily: "'Bebas Neue', sans-serif", 
-                  fontSize: '40px', 
+
+                <h2 style={{
+                  fontFamily: "'Bebas Neue', sans-serif",
+                  fontSize: '40px',
                   color: '#FFFFFF',
                   lineHeight: 1.1,
                   marginBottom: '24px',
@@ -376,19 +376,19 @@ export default function Gallery() {
                   marginBottom: '32px'
                 }} />
 
-                <h3 style={{ 
-                  fontFamily: "'Inter', sans-serif", 
-                  fontSize: '14px', 
-                  fontWeight: 700, 
+                <h3 style={{
+                  fontFamily: "'Inter', sans-serif",
+                  fontSize: '14px',
+                  fontWeight: 700,
                   color: '#FFFFFF',
                   marginBottom: '16px'
                 }}>
                   Project Overview
                 </h3>
-                
-                <p style={{ 
-                  fontFamily: "'Inter', sans-serif", 
-                  fontSize: '15px', 
+
+                <p style={{
+                  fontFamily: "'Inter', sans-serif",
+                  fontSize: '15px',
                   color: '#AAAAAA',
                   lineHeight: 1.8,
                   marginBottom: '40px'
