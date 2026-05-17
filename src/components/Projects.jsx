@@ -5,14 +5,14 @@ import GlowCard from './GlowCard';
 import { projects } from '../data/portfolioData';
 
 const accentColors = {
-  cyan: '#00E5FF',
-  violet: '#7B2FFF',
+  cyan: '#FFFFFF',
+  violet: '#E0E0E0',
   amber: '#FF9D00',
-  green: '#00FF88',
+  green: '#FFFFFF',
 };
 
 function ProjectCard({ project, featured }) {
-  const accent = accentColors[project.accentColor] || '#00E5FF';
+  const accent = accentColors[project.accentColor] || '#FFFFFF';
 
   return (
     <motion.div
@@ -70,7 +70,7 @@ function ProjectCard({ project, featured }) {
             fontFamily: 'Rajdhani, sans-serif',
             fontSize: featured ? '24px' : '20px',
             fontWeight: 700,
-            color: '#E8F4F8',
+            color: '#FFFFFF',
             marginBottom: '4px',
             lineHeight: 1.2,
           }}>
@@ -81,7 +81,7 @@ function ProjectCard({ project, featured }) {
           <p style={{
             fontFamily: 'DM Mono, monospace',
             fontSize: '12px',
-            color: '#4A7A94',
+            color: '#999999',
             marginBottom: '12px',
           }}>
             {project.subtitle}
@@ -112,7 +112,7 @@ function ProjectCard({ project, featured }) {
           <p style={{
             fontFamily: 'DM Mono, monospace',
             fontSize: '13px',
-            color: '#4A7A94',
+            color: '#999999',
             lineHeight: 1.7,
             marginBottom: '16px',
             display: '-webkit-box',
@@ -138,7 +138,7 @@ function ProjectCard({ project, featured }) {
                   style={{
                     fontFamily: 'DM Mono, monospace',
                     fontSize: '10px',
-                    color: '#E8F4F8',
+                    color: '#FFFFFF',
                     background: 'rgba(255,255,255,0.06)',
                     padding: '3px 10px',
                     borderRadius: '999px',
@@ -154,15 +154,15 @@ function ProjectCard({ project, featured }) {
               style={{
                 fontFamily: 'DM Mono, monospace',
                 fontSize: '12px',
-                color: '#4A7A94',
+                color: '#999999',
                 cursor: 'pointer',
                 display: 'flex',
                 alignItems: 'center',
                 gap: '4px',
                 transition: 'color 0.2s',
               }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = '#00E5FF')}
-              onMouseLeave={(e) => (e.currentTarget.style.color = '#4A7A94')}
+              onMouseEnter={(e) => (e.currentTarget.style.color = '#FFFFFF')}
+              onMouseLeave={(e) => (e.currentTarget.style.color = '#999999')}
               tabIndex={0}
               role="button"
               aria-label={`View details of ${project.title}`}
@@ -253,7 +253,7 @@ export default function Projects() {
                       fontFamily: 'Rajdhani, sans-serif',
                       fontSize: '28px',
                       fontWeight: 700,
-                      color: '#E8F4F8',
+                      color: '#FFFFFF',
                       marginBottom: '4px',
                     }}>
                       {featured.title}
@@ -269,7 +269,7 @@ export default function Projects() {
                     <p style={{
                       fontFamily: 'DM Mono, monospace',
                       fontSize: '13px',
-                      color: '#4A7A94',
+                      color: '#999999',
                       lineHeight: 1.7,
                     }}>
                       {featured.description}
@@ -301,7 +301,7 @@ export default function Projects() {
                           style={{
                             fontFamily: 'DM Mono, monospace',
                             fontSize: '10px',
-                            color: '#E8F4F8',
+                            color: '#FFFFFF',
                             background: 'rgba(255,255,255,0.06)',
                             padding: '4px 12px',
                             borderRadius: '999px',

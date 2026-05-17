@@ -19,7 +19,7 @@ function HexSkill({ skill, index }) {
         <span style={{
           fontFamily: 'DM Mono, monospace',
           fontSize: '10px',
-          color: '#E8F4F8',
+          color: '#FFFFFF',
           marginTop: '6px',
           textAlign: 'center',
           lineHeight: 1.2,
@@ -37,13 +37,13 @@ function CircularGauge({ skill, isVisible }) {
   const strokeDashoffset = circumference - (circumference * (isVisible ? skill.level : 0)) / 100;
 
   const colorMap = {
-    'Problem Solving': '#00E5FF',
-    'Teamwork': '#7B2FFF',
+    'Problem Solving': '#FFFFFF',
+    'Teamwork': '#E0E0E0',
     'Leadership': '#FF9D00',
-    'Communication': '#00FF88',
-    'Time Management': '#00E5FF',
+    'Communication': '#FFFFFF',
+    'Time Management': '#FFFFFF',
   };
-  const color = colorMap[skill.name] || '#00E5FF';
+  const color = colorMap[skill.name] || '#FFFFFF';
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '10px' }}>
@@ -80,7 +80,7 @@ function CircularGauge({ skill, isVisible }) {
           fontFamily: 'Orbitron, monospace',
           fontSize: '16px',
           fontWeight: 700,
-          color: '#E8F4F8',
+          color: '#FFFFFF',
         }}>
           {isVisible ? skill.level : 0}%
         </div>
@@ -88,7 +88,7 @@ function CircularGauge({ skill, isVisible }) {
       <span style={{
         fontFamily: 'DM Mono, monospace',
         fontSize: '11px',
-        color: '#4A7A94',
+        color: '#999999',
         textAlign: 'center',
         lineHeight: 1.2,
       }}>
@@ -133,7 +133,7 @@ export default function Skills() {
             fontFamily: 'DM Mono, monospace',
             fontSize: '11px',
             letterSpacing: '0.3em',
-            color: '#4A7A94',
+            color: '#999999',
             textTransform: 'uppercase',
             textAlign: 'center',
             marginBottom: '32px',

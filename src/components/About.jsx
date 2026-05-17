@@ -4,6 +4,7 @@ import { Copy, Check, Phone, Mail } from 'lucide-react';
 import SectionWrapper, { childVariants } from './SectionWrapper';
 import { personalInfo, education, languages } from '../data/portfolioData';
 import { useScrollReveal } from '../hooks/useScrollReveal';
+import shreyaProfile from '../assets/shreya-profile.jpeg';
 
 function TerminalLine({ label, value, delay, isVisible }) {
   const [typed, setTyped] = useState('');
@@ -28,9 +29,9 @@ function TerminalLine({ label, value, delay, isVisible }) {
 
   return (
     <div style={{ display: 'flex', gap: '8px' }}>
-      <span style={{ color: '#4A7A94' }}>&gt;</span>
-      <span style={{ color: '#4A7A94' }}>{label}:</span>
-      <span style={{ color: '#00FF88' }}>"{typed}"</span>
+      <span style={{ color: '#999999' }}>&gt;</span>
+      <span style={{ color: '#999999' }}>{label}:</span>
+      <span style={{ color: '#FFFFFF' }}>"{typed}"</span>
     </div>
   );
 }
@@ -66,9 +67,9 @@ function CopyButton({ text, label }) {
         gap: '10px',
         padding: '10px 16px',
         background: 'rgba(6,20,40,0.6)',
-        border: '1px solid rgba(0,229,255,0.15)',
+        border: '1px solid rgba(255,255,255,0.15)',
         borderRadius: '8px',
-        color: '#E8F4F8',
+        color: '#FFFFFF',
         fontFamily: 'DM Mono, monospace',
         fontSize: '13px',
         cursor: 'pointer',
@@ -77,9 +78,9 @@ function CopyButton({ text, label }) {
       }}
       aria-label={`Copy ${label}`}
     >
-      {label === 'Phone' ? <Phone size={14} color="#4A7A94" /> : <Mail size={14} color="#4A7A94" />}
+      {label === 'Phone' ? <Phone size={14} color="#999999" /> : <Mail size={14} color="#999999" />}
       <span style={{ flex: 1, textAlign: 'left' }}>{text}</span>
-      {copied ? <Check size={14} color="#00FF88" /> : <Copy size={14} color="#4A7A94" />}
+      {copied ? <Check size={14} color="#FFFFFF" /> : <Copy size={14} color="#999999" />}
     </button>
   );
 }
@@ -90,7 +91,7 @@ function LanguageBar({ lang, isVisible }) {
       <span style={{
         fontFamily: 'DM Mono, monospace',
         fontSize: '12px',
-        color: '#4A7A94',
+        color: '#999999',
         width: '70px',
       }}>
         {lang.name}
@@ -109,7 +110,7 @@ function LanguageBar({ lang, isVisible }) {
       <span style={{
         fontFamily: 'DM Mono, monospace',
         fontSize: '10px',
-        color: '#4A7A94',
+        color: '#999999',
       }}>
         {lang.proficiency}/{lang.max}
       </span>
@@ -165,7 +166,7 @@ export default function About() {
                 <circle
                   cx="100" cy="100" r="96"
                   fill="none"
-                  stroke="#00E5FF"
+                  stroke="#FFFFFF"
                   strokeWidth="1"
                   strokeDasharray="8 6"
                   opacity="0.4"
@@ -184,7 +185,7 @@ export default function About() {
                 <circle
                   cx="100" cy="100" r="86"
                   fill="none"
-                  stroke="#7B2FFF"
+                  stroke="#E0E0E0"
                   strokeWidth="1.5"
                   opacity="0.5"
                 />
@@ -198,20 +199,21 @@ export default function About() {
                 width: '140px',
                 height: '161px',
                 clipPath: 'polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)',
-                background: 'linear-gradient(135deg, #060D18, #0a1628)',
+                background: 'linear-gradient(135deg, #212224, #2C2D30)',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
+                overflow: 'hidden'
               }}>
-                <span style={{
-                  fontFamily: 'Orbitron, monospace',
-                  fontSize: '42px',
-                  fontWeight: 900,
-                  color: '#00E5FF',
-                  opacity: 0.8,
-                }}>
-                  SA
-                </span>
+                <img 
+                  src={shreyaProfile} 
+                  alt="Shreya Ade Profile" 
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover'
+                  }}
+                />
               </div>
 
               <style>{`
@@ -238,7 +240,7 @@ export default function About() {
                 <span style={{
                   fontFamily: 'DM Mono, monospace',
                   fontSize: '11px',
-                  color: '#4A7A94',
+                  color: '#999999',
                   marginLeft: '8px',
                 }}>
                   shreya@portfolio:~$
@@ -255,7 +257,7 @@ export default function About() {
                   />
                 ))}
                 <div style={{ marginTop: '4px' }}>
-                  <span style={{ color: '#4A7A94' }}>&gt; </span>
+                  <span style={{ color: '#999999' }}>&gt; </span>
                   <span className="blink-cursor">▮</span>
                 </div>
               </div>
@@ -266,7 +268,7 @@ export default function About() {
               <p style={{
                 fontFamily: 'DM Mono, monospace',
                 fontSize: '11px',
-                color: '#4A7A94',
+                color: '#999999',
                 letterSpacing: '0.2em',
                 marginBottom: '16px',
                 textTransform: 'uppercase',

@@ -30,17 +30,17 @@ function ContactField({ icon: Icon, label, value }) {
         gap: '12px',
         padding: '14px 20px',
         background: 'rgba(6,20,40,0.5)',
-        border: '1px solid rgba(0,229,255,0.12)',
+        border: '1px solid rgba(255,255,255,0.12)',
         borderRadius: '8px',
         fontFamily: 'DM Mono, monospace',
         transition: 'border-color 0.2s',
       }}
     >
-      <Icon size={16} color="#4A7A94" />
-      <span style={{ fontSize: '11px', color: '#4A7A94', width: '60px', letterSpacing: '0.1em' }}>
+      <Icon size={16} color="#999999" />
+      <span style={{ fontSize: '11px', color: '#999999', width: '60px', letterSpacing: '0.1em' }}>
         {label}
       </span>
-      <span style={{ flex: 1, fontSize: '13px', color: '#E8F4F8' }}>{value}</span>
+      <span style={{ flex: 1, fontSize: '13px', color: '#FFFFFF' }}>{value}</span>
       <button
         onClick={handleCopy}
         className="hoverable"
@@ -49,7 +49,7 @@ function ContactField({ icon: Icon, label, value }) {
           border: 'none',
           cursor: 'pointer',
           padding: '4px',
-          color: copied ? '#00FF88' : '#4A7A94',
+          color: copied ? '#FFFFFF' : '#999999',
           transition: 'color 0.2s',
         }}
         aria-label={`Copy ${label}`}
@@ -96,7 +96,7 @@ export default function Contact() {
                 marginTop: '-100px',
                 marginLeft: '-100px',
                 borderRadius: '50%',
-                border: '1px solid rgba(0,229,255,0.12)',
+                border: '1px solid rgba(255,255,255,0.12)',
                 animation: `radarPulse ${3 + i}s ease-out infinite`,
                 animationDelay: `${i * 1}s`,
               }}
@@ -118,7 +118,7 @@ export default function Contact() {
               left: 0,
               width: '100%',
               height: '1px',
-              background: 'rgba(0,229,255,0.3)',
+              background: 'rgba(255,255,255,0.3)',
             }} />
             <div style={{
               position: 'absolute',
@@ -126,7 +126,7 @@ export default function Contact() {
               left: '50%',
               width: '1px',
               height: '100%',
-              background: 'rgba(0,229,255,0.3)',
+              background: 'rgba(255,255,255,0.3)',
             }} />
           </div>
         </div>
@@ -141,17 +141,17 @@ export default function Contact() {
               fontFamily: 'Orbitron, monospace',
               fontSize: 'clamp(1.5rem, 4vw, 2.5rem)',
               fontWeight: 700,
-              color: '#E8F4F8',
+              color: '#FFFFFF',
               marginTop: '16px',
               marginBottom: '12px',
             }}>
-              {'> '}INITIATE CONTACT<span className="blink-cursor" style={{ color: '#00E5FF' }}>_</span>
+              {'> '}INITIATE CONTACT<span className="blink-cursor" style={{ color: '#FFFFFF' }}>_</span>
             </h2>
 
             <p style={{
               fontFamily: 'DM Mono, monospace',
               fontSize: '14px',
-              color: '#4A7A94',
+              color: '#999999',
               marginBottom: '40px',
             }}>
               Open to internships, collaborations, and full-time roles.
@@ -176,8 +176,8 @@ export default function Contact() {
                 fontWeight: 500,
                 letterSpacing: '0.1em',
                 background: 'transparent',
-                color: '#00E5FF',
-                border: '2px solid #00E5FF',
+                color: '#FFFFFF',
+                border: '2px solid #FFFFFF',
                 borderRadius: '6px',
                 padding: '16px 40px',
                 cursor: 'pointer',
@@ -187,13 +187,13 @@ export default function Contact() {
                 gap: '10px',
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.background = '#00E5FF';
+                e.currentTarget.style.background = '#FFFFFF';
                 e.currentTarget.style.color = '#020810';
-                e.currentTarget.style.boxShadow = '0 0 40px rgba(0,229,255,0.5), 0 0 80px rgba(0,229,255,0.2)';
+                e.currentTarget.style.boxShadow = '0 0 40px rgba(255,255,255,0.5), 0 0 80px rgba(255,255,255,0.2)';
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.background = 'transparent';
-                e.currentTarget.style.color = '#00E5FF';
+                e.currentTarget.style.color = '#FFFFFF';
                 e.currentTarget.style.boxShadow = 'none';
               }}
             >
@@ -209,14 +209,14 @@ export default function Contact() {
             marginTop: '80px',
             paddingTop: '24px',
             borderTop: '1px solid',
-            borderImage: 'linear-gradient(90deg, transparent, rgba(0,229,255,0.3), rgba(123,47,255,0.3), transparent) 1',
+            borderImage: 'linear-gradient(90deg, transparent, rgba(255,255,255,0.3), rgba(123,47,255,0.3), transparent) 1',
             textAlign: 'center',
           }}
         >
           <p style={{
             fontFamily: 'DM Mono, monospace',
             fontSize: '12px',
-            color: '#4A7A94',
+            color: '#999999',
             letterSpacing: '0.1em',
           }}>
             SHREYA ADE © 2025

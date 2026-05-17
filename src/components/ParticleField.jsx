@@ -50,7 +50,7 @@ export default function ParticleField({ count = 200, className = '' }) {
         // Draw dot
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        ctx.fillStyle = 'rgba(0,229,255,0.4)';
+        ctx.fillStyle = 'rgba(255,255,255,0.4)';
         ctx.fill();
       });
 
@@ -64,7 +64,7 @@ export default function ParticleField({ count = 200, className = '' }) {
             ctx.beginPath();
             ctx.moveTo(particles[i].x, particles[i].y);
             ctx.lineTo(particles[j].x, particles[j].y);
-            ctx.strokeStyle = `rgba(0,229,255,${0.08 * (1 - dist / 120)})`;
+            ctx.strokeStyle = `rgba(255,255,255,${0.08 * (1 - dist / 120)})`;
             ctx.lineWidth = 0.5;
             ctx.stroke();
           }

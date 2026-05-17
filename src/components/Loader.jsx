@@ -101,7 +101,7 @@ export default function Loader({ onComplete }) {
                 key={i}
                 x1={line.x1} y1={line.y1}
                 x2={line.x2} y2={line.y2}
-                stroke="#00E5FF"
+                stroke="#FFFFFF"
                 strokeWidth="1"
                 strokeDasharray="200"
                 filter="url(#glow-line)"
@@ -120,7 +120,7 @@ export default function Loader({ onComplete }) {
               <motion.circle
                 key={`dot-${i}`}
                 cx={dot.cx} cy={dot.cy} r="3"
-                fill="#00E5FF"
+                fill="#FFFFFF"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 1.0 + i * 0.05 }}
@@ -144,7 +144,7 @@ export default function Loader({ onComplete }) {
                     fontFamily: 'Orbitron, monospace',
                     fontSize: 'clamp(3rem, 10vw, 5rem)',
                     fontWeight: 900,
-                    color: '#00E5FF',
+                    color: '#FFFFFF',
                     lineHeight: 1,
                   }}
                 >
@@ -160,13 +160,13 @@ export default function Loader({ onComplete }) {
               style={{
                 fontFamily: 'DM Mono, monospace',
                 fontSize: '14px',
-                color: '#4A7A94',
+                color: '#999999',
                 letterSpacing: '0.3em',
                 minHeight: '20px',
               }}
             >
               {typedText}
-              <span className="blink-cursor" style={{ color: '#4A7A94' }}>▮</span>
+              <span className="blink-cursor" style={{ color: '#999999' }}>▮</span>
             </motion.div>
           </div>
 
@@ -186,7 +186,7 @@ export default function Loader({ onComplete }) {
               textAlign: 'center',
               fontFamily: 'DM Mono, monospace',
               fontSize: '10px',
-              color: '#4A7A94',
+              color: '#999999',
               letterSpacing: '0.2em',
             }}>
               {Math.round(progress)}%

@@ -16,9 +16,9 @@ function WireframeIcosphere() {
   return (
     <Icosahedron ref={meshRef} args={[2.2, 1]} position={[0, 0, 0]}>
       <meshStandardMaterial
-        color="#00E5FF"
+        color="#FFFFFF"
         wireframe
-        emissive="#00E5FF"
+        emissive="#FFFFFF"
         emissiveIntensity={0.3}
         transparent
         opacity={0.7}
@@ -42,8 +42,8 @@ function OrbitingSphere({ radius, speed, offset, size = 0.08 }) {
   return (
     <Sphere ref={ref} args={[size, 16, 16]}>
       <meshStandardMaterial
-        color="#00E5FF"
-        emissive="#00E5FF"
+        color="#FFFFFF"
+        emissive="#FFFFFF"
         emissiveIntensity={2}
         toneMapped={false}
       />
@@ -60,9 +60,9 @@ export default function Scene3D() {
         style={{ background: 'transparent' }}
         gl={{ alpha: true, antialias: true }}
       >
-        <ambientLight color="#00E5FF" intensity={0.2} />
-        <pointLight position={[5, 5, 5]} color="#00E5FF" intensity={0.8} />
-        <pointLight position={[-3, -2, 4]} color="#7B2FFF" intensity={0.4} />
+        <ambientLight color="#FFFFFF" intensity={0.2} />
+        <pointLight position={[5, 5, 5]} color="#FFFFFF" intensity={0.8} />
+        <pointLight position={[-3, -2, 4]} color="#E0E0E0" intensity={0.4} />
 
         <WireframeIcosphere />
 

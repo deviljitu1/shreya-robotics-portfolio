@@ -5,6 +5,7 @@ import { Menu, X } from 'lucide-react';
 const navLinks = [
   { label: 'About', href: '#about' },
   { label: 'Skills', href: '#skills' },
+  { label: 'Gallery', href: '#gallery' },
   { label: 'Projects', href: '#projects' },
   { label: 'Achievements', href: '#achievements' },
   { label: 'Contact', href: '#contact' },
@@ -62,15 +63,15 @@ export default function Navbar() {
       >
         <div
           style={{
-            background: 'rgba(6, 20, 40, 0.75)',
+            background: 'rgba(44, 45, 48, 0.75)',
             backdropFilter: 'blur(20px) saturate(180%)',
             WebkitBackdropFilter: 'blur(20px) saturate(180%)',
-            border: '1px solid rgba(0,229,255,0.15)',
+            border: '1px solid rgba(255,255,255,0.15)',
             borderRadius: '999px',
             padding: '6px 8px',
             boxShadow: scrolled
-              ? '0 0 60px rgba(0,229,255,0.12), 0 4px 30px rgba(0,0,0,0.6)'
-              : '0 0 40px rgba(0,229,255,0.08)',
+              ? '0 0 60px rgba(255,255,255,0.12), 0 4px 30px rgba(0,0,0,0.6)'
+              : '0 0 40px rgba(255,255,255,0.08)',
             display: 'flex',
             alignItems: 'center',
             gap: '4px',
@@ -98,7 +99,7 @@ export default function Navbar() {
                   fontWeight: 400,
                   letterSpacing: '0.1em',
                   textTransform: 'uppercase',
-                  color: isActive || isHovered ? '#00E5FF' : '#4A7A94',
+                  color: isActive || isHovered ? '#FFFFFF' : '#999999',
                   textDecoration: 'none',
                   borderRadius: '999px',
                   transition: 'color 0.2s ease',
@@ -112,10 +113,10 @@ export default function Navbar() {
                     style={{
                       position: 'absolute',
                       inset: 0,
-                      background: 'rgba(0,229,255,0.1)',
-                      border: '1px solid rgba(0,229,255,0.3)',
+                      background: 'rgba(255,255,255,0.1)',
+                      border: '1px solid rgba(255,255,255,0.3)',
                       borderRadius: '999px',
-                      boxShadow: isHovered ? '0 0 12px rgba(0,229,255,0.2)' : 'none',
+                      boxShadow: isHovered ? '0 0 12px rgba(255,255,255,0.2)' : 'none',
                     }}
                     transition={{ type: 'spring', stiffness: 380, damping: 30 }}
                   />
@@ -132,7 +133,7 @@ export default function Navbar() {
             style={{
               background: 'transparent',
               border: 'none',
-              color: '#00E5FF',
+              color: '#FFFFFF',
               cursor: 'pointer',
               padding: '8px 12px',
             }}
@@ -150,9 +151,9 @@ export default function Navbar() {
               fontFamily: 'Orbitron, monospace',
               fontSize: '13px',
               fontWeight: 700,
-              color: '#00E5FF',
+              color: '#FFFFFF',
               padding: '4px 12px',
-              borderLeft: '1px solid rgba(0,229,255,0.2)',
+              borderLeft: '1px solid rgba(255,255,255,0.2)',
               letterSpacing: '0.05em',
             }}
           >
@@ -177,7 +178,7 @@ export default function Navbar() {
             <button
               onClick={() => setMenuOpen(false)}
               className="absolute top-6 right-6"
-              style={{ background: 'transparent', border: 'none', color: '#00E5FF', cursor: 'pointer' }}
+              style={{ background: 'transparent', border: 'none', color: '#FFFFFF', cursor: 'pointer' }}
               aria-label="Close menu"
             >
               <X size={28} />
@@ -198,7 +199,7 @@ export default function Navbar() {
                     fontFamily: 'Orbitron, monospace',
                     fontSize: '28px',
                     fontWeight: 700,
-                    color: activeSection === link.href.replace('#', '') ? '#00E5FF' : '#E8F4F8',
+                    color: activeSection === link.href.replace('#', '') ? '#FFFFFF' : '#FFFFFF',
                     textDecoration: 'none',
                     textAlign: 'center',
                     letterSpacing: '0.05em',

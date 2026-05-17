@@ -9,6 +9,7 @@ import Projects from './components/Projects';
 import Achievements from './components/Achievements';
 import Contact from './components/Contact';
 import CustomCursor from './components/CustomCursor';
+import Gallery from './components/Gallery';
 
 export default function App() {
   const [loading, setLoading] = useState(true);
@@ -52,6 +53,7 @@ export default function App() {
             <Hero />
             <About />
             <Skills />
+            <Gallery />
             <Projects />
             <Achievements />
             <Contact />

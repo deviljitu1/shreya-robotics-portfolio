@@ -6,8 +6,8 @@ import { achievements } from '../data/portfolioData';
 
 const colorMap = {
   amber: { accent: '#FF9D00', bg: 'rgba(255,157,0,0.08)', border: 'rgba(255,157,0,0.3)' },
-  cyan: { accent: '#00E5FF', bg: 'rgba(0,229,255,0.08)', border: 'rgba(0,229,255,0.3)' },
-  violet: { accent: '#7B2FFF', bg: 'rgba(123,47,255,0.08)', border: 'rgba(123,47,255,0.3)' },
+  cyan: { accent: '#FFFFFF', bg: 'rgba(255,255,255,0.08)', border: 'rgba(255,255,255,0.3)' },
+  violet: { accent: '#E0E0E0', bg: 'rgba(123,47,255,0.08)', border: 'rgba(123,47,255,0.3)' },
 };
 
 function TimelineNode({ achievement, index, isLeft }) {
@@ -71,7 +71,7 @@ function TimelineNode({ achievement, index, isLeft }) {
                 fontFamily: 'Rajdhani, sans-serif',
                 fontSize: '20px',
                 fontWeight: 700,
-                color: '#E8F4F8',
+                color: '#FFFFFF',
                 marginTop: '8px',
                 lineHeight: 1.2,
               }}>
@@ -82,7 +82,7 @@ function TimelineNode({ achievement, index, isLeft }) {
               <p style={{
                 fontFamily: 'DM Mono, monospace',
                 fontSize: '12px',
-                color: '#4A7A94',
+                color: '#999999',
                 marginTop: '4px',
                 lineHeight: 1.5,
               }}>
@@ -217,8 +217,8 @@ export default function Achievements() {
                     width: '16px',
                     height: '16px',
                     borderRadius: '50%',
-                    background: colorMap[achievement.color]?.accent || '#00E5FF',
-                    boxShadow: `0 0 12px ${colorMap[achievement.color]?.accent || '#00E5FF'}60`,
+                    background: colorMap[achievement.color]?.accent || '#FFFFFF',
+                    boxShadow: `0 0 12px ${colorMap[achievement.color]?.accent || '#FFFFFF'}60`,
                     zIndex: 2,
                   }} />
 
@@ -249,7 +249,7 @@ export default function Achievements() {
                           fontFamily: 'Rajdhani, sans-serif',
                           fontSize: '18px',
                           fontWeight: 700,
-                          color: '#E8F4F8',
+                          color: '#FFFFFF',
                           marginTop: '4px',
                         }}>
                           {achievement.title}
@@ -257,7 +257,7 @@ export default function Achievements() {
                         <p style={{
                           fontFamily: 'DM Mono, monospace',
                           fontSize: '11px',
-                          color: '#4A7A94',
+                          color: '#999999',
                           marginTop: '4px',
                         }}>
                           {achievement.subtitle}

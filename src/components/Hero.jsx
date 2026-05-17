@@ -107,7 +107,7 @@ export default function Hero() {
                       fontFamily: 'Orbitron, monospace',
                       fontSize: 'clamp(2.5rem, 12vw, 6rem)',
                       fontWeight: 900,
-                      color: '#E8F4F8',
+                      color: '#FFFFFF',
                       lineHeight: 1,
                       display: 'inline-block',
                     }}
@@ -149,23 +149,23 @@ export default function Hero() {
                   style={{
                     position: 'absolute',
                     ...floatStyles[i],
-                    background: 'rgba(6, 20, 40, 0.7)',
+                    background: 'rgba(44, 45, 48, 0.7)',
                     backdropFilter: 'blur(12px)',
-                    border: '1px solid rgba(0,229,255,0.25)',
+                    border: '1px solid rgba(255,255,255,0.25)',
                     borderRadius: '999px',
                     padding: '6px 14px',
                     fontFamily: 'DM Mono, monospace',
                     fontSize: '11px',
-                    color: '#00E5FF',
+                    color: '#FFFFFF',
                     whiteSpace: 'nowrap',
                     zIndex: 2,
                     animation: floatStyles[i].animation,
                     alignItems: 'center',
                     gap: '6px',
-                    boxShadow: '0 0 16px rgba(0,229,255,0.08)',
+                    boxShadow: '0 0 16px rgba(255,255,255,0.08)',
                   }}
                 >
-                  <span style={{ color: '#4A7A94', fontSize: '10px' }}>{stat.label}</span>
+                  <span style={{ color: '#999999', fontSize: '10px' }}>{stat.label}</span>
                   <span>{stat.value}</span>
                 </motion.div>
               ))}
@@ -180,13 +180,13 @@ export default function Hero() {
                 fontFamily: 'Rajdhani, sans-serif',
                 fontSize: 'clamp(18px, 4vw, 24px)',
                 fontWeight: 600,
-                color: '#00E5FF',
+                color: '#FFFFFF',
                 marginTop: '24px',
                 minHeight: '36px',
               }}
             >
               {typewriterText}
-              <span className="blink-cursor" style={{ color: '#00E5FF' }}>▮</span>
+              <span className="blink-cursor" style={{ color: '#FFFFFF' }}>▮</span>
             </motion.div>
 
             {/* Mobile Stat Chips */}
@@ -198,19 +198,19 @@ export default function Hero() {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 1.2 + i * 0.1 }}
                   style={{
-                    background: 'rgba(6, 20, 40, 0.4)',
-                    border: '1px solid rgba(0,229,255,0.15)',
+                    background: 'rgba(44, 45, 48, 0.4)',
+                    border: '1px solid rgba(255,255,255,0.15)',
                     borderRadius: '999px',
                     padding: '4px 12px',
                     fontFamily: 'DM Mono, monospace',
                     fontSize: '10px',
-                    color: '#00E5FF',
+                    color: '#FFFFFF',
                     display: 'flex',
                     alignItems: 'center',
                     gap: '4px',
                   }}
                 >
-                  <span style={{ color: '#4A7A94' }}>{stat.label}</span>
+                  <span style={{ color: '#999999' }}>{stat.label}</span>
                   <span>{stat.value}</span>
                 </motion.div>
               ))}
@@ -224,7 +224,7 @@ export default function Hero() {
               style={{
                 fontFamily: 'DM Mono, monospace',
                 fontSize: '14px',
-                color: '#4A7A94',
+                color: '#999999',
                 marginTop: '12px',
               }}
             >
@@ -253,9 +253,14 @@ export default function Hero() {
               >
                 View Projects <ArrowRight size={14} />
               </button>
-              <button className="btn-outline">
+              <a 
+                href="/assets/Shreya_Ade_Resume.pdf" 
+                download="Shreya_Ade_Resume.pdf" 
+                className="btn-outline"
+                style={{ textDecoration: 'none' }}
+              >
                 <Download size={14} /> Download Resume
-              </button>
+              </a>
               <a
                 href="https://github.com"
                 target="_blank"
@@ -306,7 +311,7 @@ export default function Hero() {
           style={{
             width: '1px',
             height: '40px',
-            background: 'linear-gradient(to bottom, #00E5FF, transparent)',
+            background: 'linear-gradient(to bottom, #FFFFFF, transparent)',
             margin: '0 auto 8px',
           }}
         />
@@ -314,7 +319,7 @@ export default function Hero() {
           style={{
             fontFamily: 'DM Mono, monospace',
             fontSize: '10px',
-            color: '#4A7A94',
+            color: '#999999',
             letterSpacing: '0.3em',
           }}
         >

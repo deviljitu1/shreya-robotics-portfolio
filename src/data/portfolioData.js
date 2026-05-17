@@ -90,7 +90,7 @@ export const projects = [
     featured: false,
     winner: false,
     accentColor: "cyan",
-    topGradient: "linear-gradient(90deg, #00E5FF, #7B2FFF)",
+    topGradient: "linear-gradient(90deg, #FFFFFF, #E0E0E0)",
   },
   {
     id: "03",
@@ -103,7 +103,7 @@ export const projects = [
     featured: false,
     winner: false,
     accentColor: "green",
-    topGradient: "linear-gradient(90deg, #00FF88, #00E5FF)",
+    topGradient: "linear-gradient(90deg, #FFFFFF, #FFFFFF)",
   },
   {
     id: "04",
@@ -116,7 +116,7 @@ export const projects = [
     featured: false,
     winner: false,
     accentColor: "violet",
-    topGradient: "linear-gradient(90deg, #7B2FFF, #00E5FF)",
+    topGradient: "linear-gradient(90deg, #E0E0E0, #FFFFFF)",
   },
   {
     id: "05",
@@ -129,7 +129,7 @@ export const projects = [
     featured: false,
     winner: false,
     accentColor: "amber",
-    topGradient: "linear-gradient(90deg, #FF9D00, #7B2FFF)",
+    topGradient: "linear-gradient(90deg, #FF9D00, #E0E0E0)",
   },
   {
     id: "06",
@@ -142,7 +142,7 @@ export const projects = [
     featured: false,
     winner: false,
     accentColor: "cyan",
-    topGradient: "linear-gradient(90deg, #00E5FF, #00FF88)",
+    topGradient: "linear-gradient(90deg, #FFFFFF, #FFFFFF)",
   },
   {
     id: "07",
@@ -155,7 +155,7 @@ export const projects = [
     featured: false,
     winner: false,
     accentColor: "violet",
-    topGradient: "linear-gradient(90deg, #7B2FFF, #00FF88)",
+    topGradient: "linear-gradient(90deg, #E0E0E0, #FFFFFF)",
   },
 ];
 
