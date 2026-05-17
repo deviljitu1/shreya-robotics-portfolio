@@ -91,8 +91,16 @@ export default function Gallery() {
     const handleKeyDown = (e) => {
       if (!selectedProject) return;
       if (e.key === 'ArrowLeft') {
-        handlePrevProject();
+        if (selectedProject.images.length > 1) {
+          setCurrentImageIndex((prev) => (prev - 1 + selectedProject.images.length) % selectedProject.images.length);
+        }
       } else if (e.key === 'ArrowRight') {
+        if (selectedProject.images.length > 1) {
+          setCurrentImageIndex((prev) => (prev + 1) % selectedProject.images.length);
+        }
+      } else if (e.key === 'ArrowUp') {
+        handlePrevProject();
+      } else if (e.key === 'ArrowDown') {
         handleNextProject();
       } else if (e.key === 'Escape') {
         closeModal();
@@ -289,32 +297,37 @@ export default function Gallery() {
                 {/* Main Active Image / Video */}
                 <div className="relative w-full flex-1 flex items-center justify-center p-4 min-h-[260px] md:min-h-[500px]">
 
-                  {/* Left project arrow navigation */}
-                  <button
-                    onClick={handlePrevProject}
-                    style={{
-                      position: 'absolute',
-                      left: '12px',
-                      top: '50%',
-                      transform: 'translateY(-50%)',
-                      background: 'rgba(17,17,17,0.85)',
-                      border: '1px solid #333',
-                      borderRadius: '50%',
-                      width: '40px',
-                      height: '40px',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      color: '#FFFFFF',
-                      cursor: 'pointer',
-                      zIndex: 10,
-                      boxShadow: '0 4px 10px rgba(0,0,0,0.5)'
-                    }}
-                    className="hover:text-[#FFB400] hover:border-[#FFB400] transition-colors"
-                    title="Previous Project"
-                  >
-                    <ChevronLeft size={22} />
-                  </button>
+                  {/* Left image arrow navigation */}
+                  {selectedProject.images.length > 1 && (
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setCurrentImageIndex((prev) => (prev - 1 + selectedProject.images.length) % selectedProject.images.length);
+                      }}
+                      style={{
+                        position: 'absolute',
+                        left: '12px',
+                        top: '50%',
+                        transform: 'translateY(-50%)',
+                        background: 'rgba(17,17,17,0.85)',
+                        border: '1px solid #333',
+                        borderRadius: '50%',
+                        width: '40px',
+                        height: '40px',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        color: '#FFFFFF',
+                        cursor: 'pointer',
+                        zIndex: 10,
+                        boxShadow: '0 4px 10px rgba(0,0,0,0.5)'
+                      }}
+                      className="hover:text-[#FFB400] hover:border-[#FFB400] transition-all duration-300 hover:scale-105"
+                      title="Previous Image"
+                    >
+                      <ChevronLeft size={22} />
+                    </button>
+                  )}
 
                   {isVideo(selectedProject.images[currentImageIndex]) ? (
                     <video
@@ -334,32 +347,37 @@ export default function Gallery() {
                     />
                   )}
 
-                  {/* Right project arrow navigation */}
-                  <button
-                    onClick={handleNextProject}
-                    style={{
-                      position: 'absolute',
-                      right: '12px',
-                      top: '50%',
-                      transform: 'translateY(-50%)',
-                      background: 'rgba(17,17,17,0.85)',
-                      border: '1px solid #333',
-                      borderRadius: '50%',
-                      width: '40px',
-                      height: '40px',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      color: '#FFFFFF',
-                      cursor: 'pointer',
-                      zIndex: 10,
-                      boxShadow: '0 4px 10px rgba(0,0,0,0.5)'
-                    }}
-                    className="hover:text-[#FFB400] hover:border-[#FFB400] transition-colors"
-                    title="Next Project"
-                  >
-                    <ChevronRight size={22} />
-                  </button>
+                  {/* Right image arrow navigation */}
+                  {selectedProject.images.length > 1 && (
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setCurrentImageIndex((prev) => (prev + 1) % selectedProject.images.length);
+                      }}
+                      style={{
+                        position: 'absolute',
+                        right: '12px',
+                        top: '50%',
+                        transform: 'translateY(-50%)',
+                        background: 'rgba(17,17,17,0.85)',
+                        border: '1px solid #333',
+                        borderRadius: '50%',
+                        width: '40px',
+                        height: '40px',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        color: '#FFFFFF',
+                        cursor: 'pointer',
+                        zIndex: 10,
+                        boxShadow: '0 4px 10px rgba(0,0,0,0.5)'
+                      }}
+                      className="hover:text-[#FFB400] hover:border-[#FFB400] transition-all duration-300 hover:scale-105"
+                      title="Next Image"
+                    >
+                      <ChevronRight size={22} />
+                    </button>
+                  )}
                 </div>
 
                 {/* Thumbnail Variants Strip */}
@@ -460,9 +478,66 @@ export default function Gallery() {
                 </p>
 
                 <div className="mt-auto pt-6 border-t border-[#222]">
-                  <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '13px', color: '#666' }}>
+                  <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '13px', color: '#666', marginBottom: '16px' }}>
                     Variant {currentImageIndex + 1} of {selectedProject.images.length}
                   </p>
+
+                  {/* Premium Project Switcher Navigation */}
+                  <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
+                    <button
+                      onClick={handlePrevProject}
+                      style={{
+                        flex: '1 1 120px',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        gap: '8px',
+                        padding: '12px 16px',
+                        backgroundColor: '#161616',
+                        border: '1px solid #333',
+                        borderRadius: '8px',
+                        color: '#FFFFFF',
+                        fontFamily: "'Bebas Neue', sans-serif",
+                        fontSize: '16px',
+                        letterSpacing: '0.05em',
+                        cursor: 'pointer',
+                        transition: 'all 0.3s'
+                      }}
+                      className="hover:bg-[#FFB400] hover:text-[#000000] hover:border-[#FFB400] active:scale-95"
+                    >
+                      <ChevronLeft size={16} /> PREV PROJECT
+                    </button>
+                    <button
+                      onClick={handleNextProject}
+                      style={{
+                        flex: '1 1 120px',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        gap: '8px',
+                        padding: '12px 16px',
+                        backgroundColor: '#161616',
+                        border: '1px solid #333',
+                        borderRadius: '8px',
+                        color: '#FFFFFF',
+                        fontFamily: "'Bebas Neue', sans-serif",
+                        fontSize: '16px',
+                        letterSpacing: '0.05em',
+                        cursor: 'pointer',
+                        transition: 'all 0.3s'
+                      }}
+                      className="hover:bg-[#FFB400] hover:text-[#000000] hover:border-[#FFB400] active:scale-95"
+                    >
+                      NEXT PROJECT <ChevronRight size={16} />
+                    </button>
+                  </div>
+
+                  {/* Keyboard Switcher Help */}
+                  <div style={{ display: 'flex', justifyContent: 'center', marginTop: '12px' }}>
+                    <span style={{ fontFamily: "'Inter', sans-serif", fontSize: '11px', color: '#555', letterSpacing: '0.02em', textAlign: 'center' }}>
+                      Tip: Use ← / → keys for images, ↑ / ↓ keys for projects
+                    </span>
+                  </div>
                 </div>
               </div>
             </motion.div>

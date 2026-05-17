@@ -74,7 +74,7 @@ export default function App() {
               boxShadow: '0 4px 30px rgba(0, 0, 0, 0.5)'
             }}
           >
-            <h1 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: '26px', color: '#FFFFFF', margin: 0, letterSpacing: '0.05em' }}>
+            <h1 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: '26px', color: '#FFFFFF', margin: 0, letterSpacing: '0.05em', whiteSpace: 'nowrap' }}>
               SHREYA <span style={{ color: '#FFB400', textShadow: '0 0 10px rgba(255, 180, 0, 0.3)' }}>ADE</span>
             </h1>
             <button 

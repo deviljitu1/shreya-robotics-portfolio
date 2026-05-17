@@ -139,7 +139,21 @@ export default function Contact() {
                 <MapPin size={24} />
               </div>
               <h4 style={{ fontFamily: "'Inter', sans-serif", fontSize: '14px', fontWeight: 700, color: '#FFFFFF', marginBottom: '8px' }}>Location</h4>
-              <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '13px', color: '#AAAAAA' }}>Pune, Maharashtra, India</p>
+              <a 
+                href="https://maps.google.com/?q=Pune, Maharashtra, India" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                style={{ 
+                  fontFamily: "'Inter', sans-serif", 
+                  fontSize: '13px', 
+                  color: '#AAAAAA', 
+                  textDecoration: 'none',
+                  transition: 'color 0.3s' 
+                }}
+                className="hover:text-[#FFB400]"
+              >
+                Pune, Maharashtra, India
+              </a>
             </div>
 
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
@@ -158,7 +172,19 @@ export default function Contact() {
                 <Phone size={24} />
               </div>
               <h4 style={{ fontFamily: "'Inter', sans-serif", fontSize: '14px', fontWeight: 700, color: '#FFFFFF', marginBottom: '8px' }}>Phone</h4>
-              <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '13px', color: '#AAAAAA' }}>+91 7020690901</p>
+              <a 
+                href="tel:+917020690901" 
+                style={{ 
+                  fontFamily: "'Inter', sans-serif", 
+                  fontSize: '13px', 
+                  color: '#AAAAAA', 
+                  textDecoration: 'none',
+                  transition: 'color 0.3s' 
+                }}
+                className="hover:text-[#FFB400]"
+              >
+                +91 7020690901
+              </a>
             </div>
 
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', gridColumn: '1 / -1' }}>
@@ -177,7 +203,19 @@ export default function Contact() {
                 <Mail size={24} />
               </div>
               <h4 style={{ fontFamily: "'Inter', sans-serif", fontSize: '14px', fontWeight: 700, color: '#FFFFFF', marginBottom: '8px' }}>Email</h4>
-              <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '13px', color: '#AAAAAA' }}>shreyaade2003@gmail.com</p>
+              <a 
+                href="mailto:shreyaade2003@gmail.com" 
+                style={{ 
+                  fontFamily: "'Inter', sans-serif", 
+                  fontSize: '13px', 
+                  color: '#AAAAAA', 
+                  textDecoration: 'none',
+                  transition: 'color 0.3s' 
+                }}
+                className="hover:text-[#FFB400]"
+              >
+                shreyaade2003@gmail.com
+              </a>
             </div>
           </div>
         </div>

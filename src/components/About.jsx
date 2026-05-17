@@ -42,7 +42,7 @@ export default function About() {
           color: '#FFFFFF',
           marginBottom: '16px'
         }}>
-          I'm <span style={{ color: '#FFB400' }}>Shreya Ade</span>, Robotics & Automation Engineer
+          I'm <span style={{ color: '#FFB400', whiteSpace: 'nowrap' }}>Shreya Ade</span>, Robotics & Automation Engineer
         </h3>
         <p style={{
           fontFamily: "'Inter', sans-serif",
