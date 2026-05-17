@@ -121,13 +121,15 @@ export default function About() {
             <div style={{
               display: 'grid',
               gridTemplateColumns: 'repeat(2, 1fr)',
-              gap: '24px'
+              gap: '24px',
+              justifyItems: 'center'
             }}>
               {funFacts.map((fact, idx) => (
                 <div key={idx} style={{
                   backgroundColor: '#111111',
                   borderRadius: '50%',
-                  aspectRatio: '1/1',
+                  width: '130px',
+                  height: '130px',
                   display: 'flex',
                   flexDirection: 'column',
                   alignItems: 'center',
@@ -137,18 +139,20 @@ export default function About() {
                 }} className="hover:border-[#FFB400]">
                   <span style={{
                     fontFamily: "'Bebas Neue', sans-serif",
-                    fontSize: '40px',
+                    fontSize: '32px',
                     color: '#FFFFFF',
                     lineHeight: 1,
-                    marginBottom: '8px'
+                    marginBottom: '4px'
                   }}>{fact.count}</span>
                   <span style={{
                     fontFamily: "'Inter', sans-serif",
-                    fontSize: '11px',
+                    fontSize: '10px',
                     fontWeight: 700,
                     color: '#FFB400',
-                    letterSpacing: '0.1em',
-                    textTransform: 'uppercase'
+                    letterSpacing: '0.05em',
+                    textTransform: 'uppercase',
+                    textAlign: 'center',
+                    padding: '0 8px'
                   }}>{fact.label}</span>
                 </div>
               ))}
