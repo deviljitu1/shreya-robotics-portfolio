@@ -132,13 +132,18 @@ export default function Gallery() {
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [selectedProject, currentIndex]);
-
   return (
-    <section id="gallery" style={{ backgroundColor: '#0A0A0A', padding: '80px 5%', minHeight: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+    <section id="gallery" style={{ backgroundColor: '#0A0A0A', padding: '100px 5%', minHeight: 'auto', display: 'flex', flexDirection: 'column', justifyContent: 'center', borderTop: '1px solid rgba(255, 255, 255, 0.05)' }}>
       <div className="w-full max-w-[1000px] mx-auto">
 
         {/* Section Title */}
-        <div style={{ display: 'flex', alignItems: 'center', marginBottom: '40px' }}>
+        <motion.div
+          initial={{ opacity: 0, x: -30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.6 }}
+          style={{ display: 'flex', alignItems: 'center', marginBottom: '40px' }}
+        >
           <div style={{ width: '40px', height: '2px', backgroundColor: '#555', marginRight: '16px', position: 'relative' }}>
             <div style={{ position: 'absolute', right: '-4px', top: '-3px', width: '8px', height: '8px', borderTop: '2px solid #555', borderRight: '2px solid #555', transform: 'rotate(45deg)' }}></div>
           </div>
@@ -152,7 +157,7 @@ export default function Gallery() {
           }}>
             PORTFOLIO
           </h2>
-        </div>
+        </motion.div>
         {/* Grid */}
         <motion.div
           layout
@@ -440,7 +445,7 @@ export default function Gallery() {
               </div>
 
               {/* Right Column - Project Details */}
-              <div 
+              <div
                 className="w-full md:w-[40%] flex flex-col border-t md:border-t-0 md:border-l border-[#333] md:overflow-y-auto"
                 style={{
                   padding: '36px 28px',

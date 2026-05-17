@@ -1,3 +1,5 @@
+import { motion } from 'framer-motion';
+
 export default function Resume() {
   const education = [
     {
@@ -31,19 +33,25 @@ export default function Resume() {
 
   const renderTimeline = (title, items) => (
     <div className="flex-1">
-      <h4 style={{
-        display: 'inline-block',
-        backgroundColor: '#FFB400',
-        color: '#000000',
-        padding: '6px 20px',
-        fontFamily: "'Inter', sans-serif",
-        fontSize: '14px',
-        fontWeight: 800,
-        borderRadius: '20px',
-        marginBottom: '32px'
-      }}>
+      <motion.h4 
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+        style={{
+          display: 'inline-block',
+          backgroundColor: '#FFB400',
+          color: '#000000',
+          padding: '6px 20px',
+          fontFamily: "'Inter', sans-serif",
+          fontSize: '14px',
+          fontWeight: 800,
+          borderRadius: '20px',
+          marginBottom: '32px'
+        }}
+      >
         {title}
-      </h4>
+      </motion.h4>
       <div style={{ position: 'relative', paddingLeft: '30px' }}>
         {/* Vertical line */}
         <div style={{
@@ -56,7 +64,14 @@ export default function Resume() {
         }} />
         
         {items.map((item, idx) => (
-          <div key={idx} style={{ position: 'relative', marginBottom: '40px' }}>
+          <motion.div 
+            key={idx} 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.1 }}
+            transition={{ duration: 0.5, delay: idx * 0.15 }}
+            style={{ position: 'relative', marginBottom: '40px' }}
+          >
             {/* Timeline dot */}
             <div style={{
               position: 'absolute',
@@ -92,18 +107,23 @@ export default function Resume() {
             <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '13px', color: '#888888', lineHeight: 1.6 }}>
               {item.desc}
             </p>
-          </div>
+          </motion.div>
         ))}
       </div>
     </div>
   );
-
   return (
-    <section id="resume" style={{ backgroundColor: '#000000', padding: '80px 5%', minHeight: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-      <div className="w-full max-w-[1000px]">
+    <section id="resume" style={{ backgroundColor: '#000000', padding: '100px 5%', minHeight: 'auto', display: 'flex', flexDirection: 'column', justifyContent: 'center', borderTop: '1px solid rgba(255, 255, 255, 0.05)' }}>
+      <div className="w-full max-w-[1000px] mx-auto">
         
         {/* Section Title */}
-        <div style={{ display: 'flex', alignItems: 'center', marginBottom: '60px' }}>
+        <motion.div 
+          initial={{ opacity: 0, x: -30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.6 }}
+          style={{ display: 'flex', alignItems: 'center', marginBottom: '60px' }}
+        >
           <div style={{ width: '40px', height: '2px', backgroundColor: '#555', marginRight: '16px', position: 'relative' }}>
             <div style={{ position: 'absolute', right: '-4px', top: '-3px', width: '8px', height: '8px', borderTop: '2px solid #555', borderRight: '2px solid #555', transform: 'rotate(45deg)' }}></div>
           </div>
@@ -117,7 +137,7 @@ export default function Resume() {
           }}>
             RESUME
           </h2>
-        </div>
+        </motion.div>
 
         <div className="flex flex-col md:flex-row gap-12 mb-16">
           {renderTimeline('EDUCATION', education)}
@@ -126,7 +146,12 @@ export default function Resume() {
 
         {/* Skills Section (Using dark shiny blocks) */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
-          <div>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.1 }}
+            transition={{ duration: 0.6 }}
+          >
             <h4 style={{
               display: 'inline-block',
               backgroundColor: '#FFB400',
@@ -148,18 +173,24 @@ export default function Resume() {
                 'PYTHON (PROBLEM SOLVING)', 
                 'Embedded Systems & IoT - Raspberry Pi, ESP32, Arduino, Blynk, Sensor Integration'
               ].map(skill => (
-                <span key={skill} style={{
-                  backgroundColor: '#111111',
-                  border: '1px solid #333',
-                  padding: '8px 16px',
-                  borderRadius: '4px',
-                  fontFamily: "'Inter', sans-serif",
-                  fontSize: '12px',
-                  color: '#FFFFFF',
-                  fontWeight: 500
-                }}>
+                <motion.span 
+                  whileHover={{ scale: 1.05, borderColor: '#FFB400', color: '#FFB400' }}
+                  key={skill} 
+                  style={{
+                    backgroundColor: '#111111',
+                    border: '1px solid #333',
+                    padding: '8px 16px',
+                    borderRadius: '4px',
+                    fontFamily: "'Inter', sans-serif",
+                    fontSize: '12px',
+                    color: '#FFFFFF',
+                    fontWeight: 500,
+                    cursor: 'default',
+                    transition: 'border-color 0.3s, color 0.3s'
+                  }}
+                >
                   {skill}
-                </span>
+                </motion.span>
               ))}
             </div>
             
@@ -183,23 +214,34 @@ export default function Resume() {
                 'MS WORD', 
                 'VIDEO EDITING (CLIPCHAMP)'
               ].map(skill => (
-                <span key={skill} style={{
-                  backgroundColor: '#111111',
-                  border: '1px solid #333',
-                  padding: '8px 16px',
-                  borderRadius: '4px',
-                  fontFamily: "'Inter', sans-serif",
-                  fontSize: '12px',
-                  color: '#FFFFFF',
-                  fontWeight: 500
-                }}>
+                <motion.span 
+                  whileHover={{ scale: 1.05, borderColor: '#FFB400', color: '#FFB400' }}
+                  key={skill} 
+                  style={{
+                    backgroundColor: '#111111',
+                    border: '1px solid #333',
+                    padding: '8px 16px',
+                    borderRadius: '4px',
+                    fontFamily: "'Inter', sans-serif",
+                    fontSize: '12px',
+                    color: '#FFFFFF',
+                    fontWeight: 500,
+                    cursor: 'default',
+                    transition: 'border-color 0.3s, color 0.3s'
+                  }}
+                >
                   {skill}
-                </span>
+                </motion.span>
               ))}
             </div>
-          </div>
+          </motion.div>
 
-          <div>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.1 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
             <h4 style={{
               display: 'inline-block',
               backgroundColor: '#FFB400',
@@ -220,18 +262,24 @@ export default function Resume() {
                 'MARATHI (fluent)', 
                 'TAMIL (intermediate)'
               ].map(lang => (
-                <span key={lang} style={{
-                  backgroundColor: '#111111',
-                  border: '1px solid #333',
-                  padding: '8px 16px',
-                  borderRadius: '4px',
-                  fontFamily: "'Inter', sans-serif",
-                  fontSize: '12px',
-                  color: '#FFFFFF',
-                  fontWeight: 500
-                }}>
+                <motion.span 
+                  whileHover={{ scale: 1.05, borderColor: '#FFB400', color: '#FFB400' }}
+                  key={lang} 
+                  style={{
+                    backgroundColor: '#111111',
+                    border: '1px solid #333',
+                    padding: '8px 16px',
+                    borderRadius: '4px',
+                    fontFamily: "'Inter', sans-serif",
+                    fontSize: '12px',
+                    color: '#FFFFFF',
+                    fontWeight: 500,
+                    cursor: 'default',
+                    transition: 'border-color 0.3s, color 0.3s'
+                  }}
+                >
                   {lang}
-                </span>
+                </motion.span>
               ))}
             </div>
 
@@ -256,20 +304,27 @@ export default function Resume() {
                 '2nd Place – Campaigning Contest (College Club)',
                 'Conference Presentation - National Conference on AI, IoT & Data-Driven (NCAIDT)'
               ].map((achievement, i) => (
-                <li key={i} style={{ 
-                  fontFamily: "'Inter', sans-serif", 
-                  fontSize: '14px', 
-                  color: '#AAAAAA', 
-                  lineHeight: 1.6,
-                  paddingLeft: '24px',
-                  position: 'relative'
-                }}>
+                <motion.li 
+                  key={i} 
+                  initial={{ opacity: 0, x: -15 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: i * 0.1 }}
+                  style={{ 
+                    fontFamily: "'Inter', sans-serif", 
+                    fontSize: '14px', 
+                    color: '#AAAAAA', 
+                    lineHeight: 1.6,
+                    paddingLeft: '24px',
+                    position: 'relative'
+                  }}
+                >
                   <span style={{ position: 'absolute', left: 0, top: '6px', color: '#FFB400' }}>▹</span>
                   {achievement}
-                </li>
+                </motion.li>
               ))}
             </ul>
-          </div>
+          </motion.div>
         </div>
 
       </div>

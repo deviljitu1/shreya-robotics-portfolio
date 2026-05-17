@@ -1,4 +1,5 @@
 import { Cpu, Monitor, PenTool } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 export default function About() {
   const whatIDo = [
@@ -12,13 +13,18 @@ export default function About() {
     { count: '5+', label: 'Projects' },
     { count: '4+', label: 'Tech Skills' }
   ];
-
   return (
-    <section id="about" style={{ backgroundColor: '#0A0A0A', padding: '80px 5%', minHeight: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-      <div className="w-full max-w-[1000px]">
+    <section id="about" style={{ backgroundColor: '#0A0A0A', padding: '100px 5%', minHeight: 'auto', display: 'flex', flexDirection: 'column', justifyContent: 'center', borderTop: '1px solid rgba(255, 255, 255, 0.05)' }}>
+      <div className="w-full max-w-[1000px] mx-auto">
         
         {/* Section Title */}
-        <div style={{ display: 'flex', alignItems: 'center', marginBottom: '40px' }}>
+        <motion.div 
+          initial={{ opacity: 0, x: -30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.6 }}
+          style={{ display: 'flex', alignItems: 'center', marginBottom: '40px' }}
+        >
           <div style={{ width: '40px', height: '2px', backgroundColor: '#555', marginRight: '16px', position: 'relative' }}>
             <div style={{ position: 'absolute', right: '-4px', top: '-3px', width: '8px', height: '8px', borderTop: '2px solid #555', borderRight: '2px solid #555', transform: 'rotate(45deg)' }}></div>
           </div>
@@ -32,53 +38,73 @@ export default function About() {
           }}>
             ABOUT ME
           </h2>
-        </div>
+        </motion.div>
 
         {/* Bio */}
-        <h3 style={{
-          fontFamily: "'Inter', sans-serif",
-          fontSize: '20px',
-          fontWeight: 600,
-          color: '#FFFFFF',
-          marginBottom: '16px'
-        }}>
-          I'm <span style={{ color: '#FFB400', whiteSpace: 'nowrap' }}>Shreya Ade</span>, Robotics & Automation Engineer
-        </h3>
-        <p style={{
-          fontFamily: "'Inter', sans-serif",
-          fontSize: '14px',
-          color: '#AAAAAA',
-          lineHeight: 1.8,
-          marginBottom: '48px',
-          maxWidth: '800px'
-        }}>
-          I am a Robotics and Automation Engineering student with practical experience in CAD design, IoT,
-          and robotics. I adapt easily to new environments and have a keen interest in research and
-          problem-solving. I am dedicated to applying my full effort toward developing innovative and
-          efficient smart systems.
-        </p>
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+        >
+          <h3 style={{
+            fontFamily: "'Inter', sans-serif",
+            fontSize: '20px',
+            fontWeight: 600,
+            color: '#FFFFFF',
+            marginBottom: '16px'
+          }}>
+            I'm <span style={{ color: '#FFB400', whiteSpace: 'nowrap' }}>Shreya Ade</span>, Robotics & Automation Engineer
+          </h3>
+          <p style={{
+            fontFamily: "'Inter', sans-serif",
+            fontSize: '14px',
+            color: '#AAAAAA',
+            lineHeight: 1.8,
+            marginBottom: '48px',
+            maxWidth: '800px'
+          }}>
+            I am a Robotics and Automation Engineering student with practical experience in CAD design, IoT,
+            and robotics. I adapt easily to new environments and have a keen interest in research and
+            problem-solving. I am dedicated to applying my full effort toward developing innovative and
+            efficient smart systems.
+          </p>
+        </motion.div>
 
         <div className="flex flex-col md:flex-row gap-12">
           
           {/* What I Do */}
           <div className="flex-1">
-            <h4 style={{
-              display: 'inline-block',
-              backgroundColor: '#FFB400',
-              color: '#000000',
-              padding: '6px 20px',
-              fontFamily: "'Inter', sans-serif",
-              fontSize: '14px',
-              fontWeight: 800,
-              borderRadius: '20px',
-              marginBottom: '32px'
-            }}>
+            <motion.h4 
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              style={{
+                display: 'inline-block',
+                backgroundColor: '#FFB400',
+                color: '#000000',
+                padding: '6px 20px',
+                fontFamily: "'Inter', sans-serif",
+                fontSize: '14px',
+                fontWeight: 800,
+                borderRadius: '20px',
+                marginBottom: '32px'
+              }}
+            >
               What I Do!
-            </h4>
+            </motion.h4>
             
             <div className="flex flex-col gap-6">
               {whatIDo.map((item, idx) => (
-                <div key={idx} className="flex gap-4 items-start">
+                <motion.div 
+                  key={idx} 
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.2 }}
+                  transition={{ duration: 0.5, delay: idx * 0.15 }}
+                  className="flex gap-4 items-start"
+                >
                   <div style={{ 
                     width: '60px', 
                     height: '60px', 
@@ -96,26 +122,32 @@ export default function About() {
                     <h5 style={{ fontFamily: "'Inter', sans-serif", fontSize: '16px', fontWeight: 700, color: '#FFFFFF', marginBottom: '8px' }}>{item.title}</h5>
                     <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '13px', color: '#888888', lineHeight: 1.6 }}>{item.desc}</p>
                   </div>
-                </div>
+                </motion.div>
               ))}
             </div>
           </div>
 
           {/* Fun Facts */}
           <div className="flex-1">
-            <h4 style={{
-              display: 'inline-block',
-              backgroundColor: '#FFB400',
-              color: '#000000',
-              padding: '6px 20px',
-              fontFamily: "'Inter', sans-serif",
-              fontSize: '14px',
-              fontWeight: 800,
-              borderRadius: '20px',
-              marginBottom: '32px'
-            }}>
+            <motion.h4 
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              style={{
+                display: 'inline-block',
+                backgroundColor: '#FFB400',
+                color: '#000000',
+                padding: '6px 20px',
+                fontFamily: "'Inter', sans-serif",
+                fontSize: '14px',
+                fontWeight: 800,
+                borderRadius: '20px',
+                marginBottom: '32px'
+              }}
+            >
               Fun Facts
-            </h4>
+            </motion.h4>
             
             <div style={{
               display: 'flex',
@@ -124,18 +156,26 @@ export default function About() {
               justifyContent: 'center'
             }}>
               {funFacts.map((fact, idx) => (
-                <div key={idx} style={{
-                  backgroundColor: '#111111',
-                  borderRadius: '50%',
-                  width: '130px',
-                  height: '130px',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  border: '2px solid #222',
-                  transition: 'border-color 0.3s'
-                }} className="hover:border-[#FFB400]">
+                <motion.div 
+                  key={idx} 
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true, amount: 0.2 }}
+                  transition={{ type: 'spring', stiffness: 100, delay: idx * 0.15 }}
+                  style={{
+                    backgroundColor: '#111111',
+                    borderRadius: '50%',
+                    width: '130px',
+                    height: '130px',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    border: '2px solid #222',
+                    transition: 'border-color 0.3s'
+                  }} 
+                  className="hover:border-[#FFB400]"
+                >
                   <span style={{
                     fontFamily: "'Bebas Neue', sans-serif",
                     fontSize: '32px',
@@ -153,7 +193,7 @@ export default function About() {
                     textAlign: 'center',
                     padding: '0 8px'
                   }}>{fact.label}</span>
-                </div>
+                </motion.div>
               ))}
             </div>
           </div>

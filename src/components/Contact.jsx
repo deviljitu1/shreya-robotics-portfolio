@@ -1,12 +1,19 @@
 import { MapPin, Phone, Mail } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 export default function Contact() {
   return (
-    <section id="contact" style={{ backgroundColor: '#0A0A0A', padding: '80px 5%', minHeight: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-      <div className="w-full max-w-[1000px]">
+    <section id="contact" style={{ backgroundColor: '#0A0A0A', padding: '100px 5%', minHeight: 'auto', display: 'flex', flexDirection: 'column', justifyContent: 'center', borderTop: '1px solid rgba(255, 255, 255, 0.05)' }}>
+      <div className="w-full max-w-[1000px] mx-auto">
         
         {/* Section Title */}
-        <div style={{ display: 'flex', alignItems: 'center', marginBottom: '40px' }}>
+        <motion.div 
+          initial={{ opacity: 0, x: -30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.6 }}
+          style={{ display: 'flex', alignItems: 'center', marginBottom: '40px' }}
+        >
           <div style={{ width: '40px', height: '2px', backgroundColor: '#555', marginRight: '16px', position: 'relative' }}>
             <div style={{ position: 'absolute', right: '-4px', top: '-3px', width: '8px', height: '8px', borderTop: '2px solid #555', borderRight: '2px solid #555', transform: 'rotate(45deg)' }}></div>
           </div>
@@ -20,32 +27,45 @@ export default function Contact() {
           }}>
             CONTACT
           </h2>
-        </div>
+        </motion.div>
 
-        <p style={{
-          fontFamily: "'Inter', sans-serif",
-          fontSize: '16px',
-          fontWeight: 600,
-          color: '#FFFFFF',
-          marginBottom: '16px'
-        }}>
-          Feel <span style={{ color: '#FFB400' }}>free</span> to contact me!
-        </p>
-        <p style={{
-          fontFamily: "'Inter', sans-serif",
-          fontSize: '14px',
-          color: '#AAAAAA',
-          lineHeight: 1.8,
-          marginBottom: '60px',
-          maxWidth: '600px'
-        }}>
-          Open to internships, collaborations, and full-time roles in design and robotics engineering. Let's connect and build something amazing together.
-        </p>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.6 }}
+        >
+          <p style={{
+            fontFamily: "'Inter', sans-serif",
+            fontSize: '16px',
+            fontWeight: 600,
+            color: '#FFFFFF',
+            marginBottom: '16px'
+          }}>
+            Feel <span style={{ color: '#FFB400' }}>free</span> to contact me!
+          </p>
+          <p style={{
+            fontFamily: "'Inter', sans-serif",
+            fontSize: '14px',
+            color: '#AAAAAA',
+            lineHeight: 1.8,
+            marginBottom: '60px',
+            maxWidth: '600px'
+          }}>
+            Open to internships, collaborations, and full-time roles in design and robotics engineering. Let's connect and build something amazing together.
+          </p>
+        </motion.div>
 
         <div className="flex flex-col md:flex-row gap-12 items-start">
           
           {/* Contact Form */}
-          <div className="flex-1 w-full bg-[#111111] p-8 border border-[#222] rounded-lg">
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.1 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="flex-1 w-full bg-[#111111] p-8 border border-[#222] rounded-lg"
+          >
             <form style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
               <input 
                 type="text" 
@@ -119,11 +139,19 @@ export default function Contact() {
                 SEND MESSAGE
               </button>
             </form>
-          </div>
+          </motion.div>
 
           {/* Contact Info */}
           <div className="flex-1 w-full grid grid-cols-1 sm:grid-cols-2 gap-8">
-            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
+            
+            {/* Location Card */}
+            <motion.div 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.1 }}
+              transition={{ duration: 0.5, delay: 0.15 }}
+              style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}
+            >
               <div style={{
                 width: '60px',
                 height: '60px',
@@ -154,9 +182,16 @@ export default function Contact() {
               >
                 Pune, Maharashtra, India
               </a>
-            </div>
+            </motion.div>
 
-            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
+            {/* Phone Card */}
+            <motion.div 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.1 }}
+              transition={{ duration: 0.5, delay: 0.25 }}
+              style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}
+            >
               <div style={{
                 width: '60px',
                 height: '60px',
@@ -185,9 +220,16 @@ export default function Contact() {
               >
                 +91 7020690901
               </a>
-            </div>
+            </motion.div>
 
-            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', gridColumn: '1 / -1' }}>
+            {/* Email Card */}
+            <motion.div 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.1 }}
+              transition={{ duration: 0.5, delay: 0.35 }}
+              style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', gridColumn: '1 / -1' }}
+            >
               <div style={{
                 width: '60px',
                 height: '60px',
@@ -216,12 +258,19 @@ export default function Contact() {
               >
                 shreyaade2003@gmail.com
               </a>
-            </div>
+            </motion.div>
+
           </div>
         </div>
         
         {/* Footer Thanks */}
-        <div style={{ marginTop: '80px', textAlign: 'center', borderTop: '1px solid #222', paddingTop: '40px' }}>
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          style={{ marginTop: '80px', textAlign: 'center', borderTop: '1px solid #222', paddingTop: '40px' }}
+        >
           <h2 style={{
             fontFamily: "'Bebas Neue', sans-serif",
             fontSize: '32px',
@@ -230,7 +279,7 @@ export default function Contact() {
           }}>
             THANKS FOR <span style={{ color: '#FFB400' }}>PATIENCE!</span>
           </h2>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
