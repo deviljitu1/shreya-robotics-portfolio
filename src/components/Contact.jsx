@@ -43,12 +43,12 @@ export default function Contact() {
               
               <div>
                 <h3 style={{ fontFamily: "'Inter', sans-serif", fontSize: '11px', fontWeight: 700, color: '#FFFFFF', letterSpacing: '0.1em', marginBottom: '8px', textTransform: 'uppercase' }}>Phone</h3>
-                <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '12px', color: '#888888' }}>+91 91584 76249</p>
+                <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '12px', color: '#888888' }}>+91 7020690901</p>
               </div>
 
               <div>
                 <h3 style={{ fontFamily: "'Inter', sans-serif", fontSize: '11px', fontWeight: 700, color: '#FFFFFF', letterSpacing: '0.1em', marginBottom: '8px', textTransform: 'uppercase' }}>E-mail</h3>
-                <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '12px', color: '#888888' }}>adeshreya2211@gmail.com</p>
+                <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '12px', color: '#888888' }}>shreyaade2003@gmail.com</p>
               </div>
             </div>
           </div>

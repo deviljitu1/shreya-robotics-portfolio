@@ -36,6 +36,23 @@ export default function Navbar() {
 
       <div className="flex gap-8">
         <a
+          href="#profile"
+          onClick={(e) => handleNavClick(e, 'profile')}
+          style={{
+            fontFamily: "'Inter', sans-serif",
+            fontSize: '10px',
+            fontWeight: 500,
+            letterSpacing: '0.2em',
+            color: '#FFFFFF',
+            textTransform: 'uppercase',
+            textDecoration: 'none',
+            transition: 'opacity 0.3s'
+          }}
+          className="hover:opacity-60 hidden md:block"
+        >
+          PROFILE
+        </a>
+        <a
           href="#gallery"
           onClick={(e) => handleNavClick(e, 'gallery')}
           style={{

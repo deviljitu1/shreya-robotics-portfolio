@@ -60,7 +60,7 @@ export default function Hero() {
             textTransform: 'uppercase'
           }}
         >
-          ROBOTICS ENGINEER & DESIGNER
+          ROBOTICS AND AUTOMATION ENGINEER
         </motion.p>
       </div>
 

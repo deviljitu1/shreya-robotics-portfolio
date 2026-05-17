@@ -6,15 +6,54 @@ import SectionWrapper, { childVariants } from './SectionWrapper';
 const galleryItems = [
   {
     id: 1,
-    title: 'KEET CAFE',
-    description: 'A minimal and elegant web design project for a local coffee shop. Features a clean layout, typography-focused aesthetic, and a seamless user experience.',
+    title: 'STAIRCASE CLIMBING ROBOT',
+    description: 'Built functional prototype and design of staircase climbing robot using lead screw & rack-and-pinion for smooth vertical/horizontal transitions.',
     images: [
+      'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&q=80&w=1200',
+      'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=1200',
+      'https://images.unsplash.com/photo-1535378917042-10a22c95931a?auto=format&fit=crop&q=80&w=1200'
+    ]
+  },
+  {
+    id: 2,
+    title: 'AUTONOMOUS WELDMENT ROBOT',
+    description: 'Designed and developed a robotic system with a burnishing roller for weld surface finishing in shipbuilding/repairing. Focused on counterclockwise motion cancellation of force and reduction of vibration.',
+    images: [
+      'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1200',
+      'https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80&w=1200',
+      'https://images.unsplash.com/photo-1565439390118-cbf165c90d54?auto=format&fit=crop&q=80&w=1200'
+    ]
+  },
+  {
+    id: 3,
+    title: 'ADAPTIVE WHEELCHAIR',
+    description: 'TNWISE Hackathon 2025 Winner. Designed an adaptive wheelchair with interchangeable seats and additional support features to assist differently-abled users. Focused on ergonomic design and sensor-based movement assistance.',
+    images: [
+      'https://images.unsplash.com/photo-1579546929518-9e396f3cc809?auto=format&fit=crop&q=80&w=1200',
       'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1200',
-      'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80&w=1200',
-      'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&q=80&w=1200'
+      'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80&w=1200'
+    ]
+  },
+  {
+    id: 4,
+    title: 'CNN LEAF IMAGE ANALYSIS',
+    description: 'Presented a CNN model for plant disease detection using MobilenetV2 pretrained data at the National Conference on AI, IoT & Data-Driven Transformation (NCAIDT 2025).',
+    images: [
+      'https://images.unsplash.com/photo-1530836369250-ef71a3f5e48d?auto=format&fit=crop&q=80&w=1200',
+      'https://images.unsplash.com/photo-1555626906-fcf10d6851b4?auto=format&fit=crop&q=80&w=1200',
+      'https://images.unsplash.com/photo-1517430816045-df4b7de11d1d?auto=format&fit=crop&q=80&w=1200'
+    ]
+  },
+  {
+    id: 5,
+    title: 'IoT SOIL MOISTURE SYSTEM',
+    description: 'ESP32 + Blynk-based irrigation automation with real-time monitoring. Implementation of various sensors using Raspberry Pi 4 (Microprocessor) & Arduino Uno (Microcontroller).',
+    images: [
+      'https://images.unsplash.com/photo-1592484022853-432a52ce4c7a?auto=format&fit=crop&q=80&w=1200',
+      'https://images.unsplash.com/photo-1592659762303-90081d34b277?auto=format&fit=crop&q=80&w=1200',
+      'https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&q=80&w=1200'
     ]
   }
-  // Add more items here if needed
 ];
 
 export default function Gallery() {
