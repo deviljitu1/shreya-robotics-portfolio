@@ -282,10 +282,10 @@ export default function Gallery() {
             >
               {/* Left Column - Image Viewer */}
               <div className="w-full md:w-[60%] flex flex-col bg-[#0A0A0A] relative">
-                
+
                 {/* Main Active Image / Video */}
                 <div className="relative w-full flex-1 flex items-center justify-center p-4 min-h-[260px] md:min-h-[500px]">
-                  
+
                   {/* Left project arrow navigation */}
                   <button
                     onClick={handlePrevProject}
