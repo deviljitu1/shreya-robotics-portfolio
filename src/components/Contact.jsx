@@ -1,183 +1,196 @@
-import { motion } from 'framer-motion';
+import { MapPin, Phone, Mail } from 'lucide-react';
 
 export default function Contact() {
   return (
-    <section id="contact" style={{ backgroundColor: '#1E1F22', padding: '120px 0', minHeight: '80vh', display: 'flex', alignItems: 'center' }}>
-      <div className="mx-auto px-6 md:px-12 lg:px-20 w-full" style={{ maxWidth: '1200px' }}>
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-          gap: '80px',
-        }}>
-          
-          {/* Left Column - Info */}
-          <div>
-            <h2 style={{
-              fontFamily: "'Inter', sans-serif",
-              fontSize: '24px',
-              fontWeight: 800,
-              color: '#FFFFFF',
-              letterSpacing: '0.1em',
-              marginBottom: '32px',
-              textTransform: 'uppercase'
-            }}>
-              CONTACT
-            </h2>
-            
-            <p style={{
-              fontFamily: "'Inter', sans-serif",
-              fontSize: '12px',
-              color: '#888888',
-              lineHeight: 1.8,
-              marginBottom: '48px',
-              maxWidth: '400px'
-            }}>
-              Open to internships, collaborations, and full-time roles in design and robotics engineering. Let's connect and build something amazing together.
-            </p>
-
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
-              <div>
-                <h3 style={{ fontFamily: "'Inter', sans-serif", fontSize: '11px', fontWeight: 700, color: '#FFFFFF', letterSpacing: '0.1em', marginBottom: '8px', textTransform: 'uppercase' }}>Address</h3>
-                <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '12px', color: '#888888' }}>Pune, Maharashtra, India</p>
-              </div>
-              
-              <div>
-                <h3 style={{ fontFamily: "'Inter', sans-serif", fontSize: '11px', fontWeight: 700, color: '#FFFFFF', letterSpacing: '0.1em', marginBottom: '8px', textTransform: 'uppercase' }}>Phone</h3>
-                <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '12px', color: '#888888' }}>+91 7020690901</p>
-              </div>
-
-              <div>
-                <h3 style={{ fontFamily: "'Inter', sans-serif", fontSize: '11px', fontWeight: 700, color: '#FFFFFF', letterSpacing: '0.1em', marginBottom: '8px', textTransform: 'uppercase' }}>E-mail</h3>
-                <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '12px', color: '#888888' }}>shreyaade2003@gmail.com</p>
-              </div>
-            </div>
+    <section id="contact" style={{ backgroundColor: '#0A0A0A', padding: '80px 5%', minHeight: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+      <div className="w-full max-w-[1000px]">
+        
+        {/* Section Title */}
+        <div style={{ display: 'flex', alignItems: 'center', marginBottom: '40px' }}>
+          <div style={{ width: '40px', height: '2px', backgroundColor: '#555', marginRight: '16px', position: 'relative' }}>
+            <div style={{ position: 'absolute', right: '-4px', top: '-3px', width: '8px', height: '8px', borderTop: '2px solid #555', borderRight: '2px solid #555', transform: 'rotate(45deg)' }}></div>
           </div>
-
-          {/* Right Column - Form */}
-          <div style={{
-            background: '#18191B', // slightly darker box
-            padding: '40px',
-            borderRadius: '4px',
-            boxShadow: '0 20px 40px rgba(0,0,0,0.2)'
+          <h2 style={{
+            fontFamily: "'Bebas Neue', sans-serif",
+            fontSize: '56px',
+            color: '#FFFFFF',
+            letterSpacing: '0.05em',
+            margin: 0,
+            lineHeight: 1
           }}>
-            <h2 style={{
-              fontFamily: "'Inter', sans-serif",
-              fontSize: '16px',
-              fontWeight: 800,
-              color: '#FFFFFF',
-              letterSpacing: '0.1em',
-              marginBottom: '32px',
-              textTransform: 'uppercase'
-            }}>
-              CONTACT FORM
-            </h2>
+            CONTACT
+          </h2>
+        </div>
 
+        <p style={{
+          fontFamily: "'Inter', sans-serif",
+          fontSize: '16px',
+          fontWeight: 600,
+          color: '#FFFFFF',
+          marginBottom: '16px'
+        }}>
+          Feel <span style={{ color: '#FFB400' }}>free</span> to contact me!
+        </p>
+        <p style={{
+          fontFamily: "'Inter', sans-serif",
+          fontSize: '14px',
+          color: '#AAAAAA',
+          lineHeight: 1.8,
+          marginBottom: '60px',
+          maxWidth: '600px'
+        }}>
+          Open to internships, collaborations, and full-time roles in design and robotics engineering. Let's connect and build something amazing together.
+        </p>
+
+        <div className="flex flex-col md:flex-row gap-12 items-start">
+          
+          {/* Contact Form */}
+          <div className="flex-1 w-full bg-[#111111] p-8 border border-[#222] rounded-lg">
             <form style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
               <input 
                 type="text" 
-                placeholder="Your name" 
+                placeholder="YOUR NAME" 
                 style={{
-                  background: 'transparent',
-                  border: 'none',
-                  borderBottom: '1px solid #333',
-                  padding: '12px 0',
+                  background: '#0A0A0A',
+                  border: '1px solid #333',
+                  padding: '16px',
                   color: '#FFF',
                   fontFamily: "'Inter', sans-serif",
                   fontSize: '12px',
-                  outline: 'none'
+                  fontWeight: 600,
+                  outline: 'none',
+                  borderRadius: '4px'
                 }}
-              />
-              <input 
-                type="text" 
-                placeholder="Your phone" 
-                style={{
-                  background: 'transparent',
-                  border: 'none',
-                  borderBottom: '1px solid #333',
-                  padding: '12px 0',
-                  color: '#FFF',
-                  fontFamily: "'Inter', sans-serif",
-                  fontSize: '12px',
-                  outline: 'none'
-                }}
+                className="focus:border-[#FFB400] transition-colors"
               />
               <input 
                 type="email" 
-                placeholder="Your e-mail" 
+                placeholder="YOUR E-MAIL" 
                 style={{
-                  background: 'transparent',
-                  border: 'none',
-                  borderBottom: '1px solid #333',
-                  padding: '12px 0',
+                  background: '#0A0A0A',
+                  border: '1px solid #333',
+                  padding: '16px',
                   color: '#FFF',
                   fontFamily: "'Inter', sans-serif",
                   fontSize: '12px',
-                  outline: 'none'
+                  fontWeight: 600,
+                  outline: 'none',
+                  borderRadius: '4px'
                 }}
+                className="focus:border-[#FFB400] transition-colors"
               />
               <textarea 
-                placeholder="Message" 
-                rows="3"
+                placeholder="YOUR MESSAGE" 
+                rows="4"
                 style={{
-                  background: 'transparent',
-                  border: 'none',
-                  borderBottom: '1px solid #333',
-                  padding: '12px 0',
+                  background: '#0A0A0A',
+                  border: '1px solid #333',
+                  padding: '16px',
                   color: '#FFF',
                   fontFamily: "'Inter', sans-serif",
                   fontSize: '12px',
+                  fontWeight: 600,
                   outline: 'none',
-                  resize: 'none'
+                  resize: 'none',
+                  borderRadius: '4px'
                 }}
+                className="focus:border-[#FFB400] transition-colors"
               />
               
               <button 
                 type="button"
                 style={{
-                  background: '#2A2A2C',
+                  background: '#FFB400',
                   border: 'none',
-                  color: '#FFFFFF',
-                  padding: '16px 24px',
+                  color: '#000000',
+                  padding: '16px 32px',
                   fontFamily: "'Inter', sans-serif",
-                  fontSize: '10px',
-                  fontWeight: 600,
-                  letterSpacing: '0.2em',
+                  fontSize: '14px',
+                  fontWeight: 800,
+                  letterSpacing: '0.1em',
                   textTransform: 'uppercase',
                   cursor: 'pointer',
                   alignSelf: 'flex-start',
-                  marginTop: '16px',
-                  transition: 'background 0.3s'
+                  borderRadius: '30px',
+                  transition: 'transform 0.3s'
                 }}
-                className="hover:bg-white hover:text-black"
+                className="hover:scale-105"
               >
-                SEND MESSAGE &gt;
+                SEND MESSAGE
               </button>
             </form>
           </div>
 
-        </div>
+          {/* Contact Info */}
+          <div className="flex-1 w-full grid grid-cols-1 sm:grid-cols-2 gap-8">
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
+              <div style={{
+                width: '60px',
+                height: '60px',
+                borderRadius: '50%',
+                backgroundColor: '#111111',
+                border: '2px solid #FFB400',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                color: '#FFB400',
+                marginBottom: '16px'
+              }}>
+                <MapPin size={24} />
+              </div>
+              <h4 style={{ fontFamily: "'Inter', sans-serif", fontSize: '14px', fontWeight: 700, color: '#FFFFFF', marginBottom: '8px' }}>Location</h4>
+              <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '13px', color: '#AAAAAA' }}>Pune, Maharashtra, India</p>
+            </div>
 
-        {/* Footer Text directly inside Contact section to match layout */}
-        <div style={{ marginTop: '120px', textAlign: 'center' }}>
-          <p style={{
-            fontFamily: "'Inter', sans-serif",
-            fontSize: '9px',
-            color: '#888888',
-            letterSpacing: '0.2em',
-            textTransform: 'uppercase',
-            marginBottom: '8px'
-          }}>
-            THE END
-          </p>
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
+              <div style={{
+                width: '60px',
+                height: '60px',
+                borderRadius: '50%',
+                backgroundColor: '#111111',
+                border: '2px solid #FFB400',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                color: '#FFB400',
+                marginBottom: '16px'
+              }}>
+                <Phone size={24} />
+              </div>
+              <h4 style={{ fontFamily: "'Inter', sans-serif", fontSize: '14px', fontWeight: 700, color: '#FFFFFF', marginBottom: '8px' }}>Phone</h4>
+              <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '13px', color: '#AAAAAA' }}>+91 7020690901</p>
+            </div>
+
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', gridColumn: '1 / -1' }}>
+              <div style={{
+                width: '60px',
+                height: '60px',
+                borderRadius: '50%',
+                backgroundColor: '#111111',
+                border: '2px solid #FFB400',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                color: '#FFB400',
+                marginBottom: '16px'
+              }}>
+                <Mail size={24} />
+              </div>
+              <h4 style={{ fontFamily: "'Inter', sans-serif", fontSize: '14px', fontWeight: 700, color: '#FFFFFF', marginBottom: '8px' }}>Email</h4>
+              <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '13px', color: '#AAAAAA' }}>shreyaade2003@gmail.com</p>
+            </div>
+          </div>
+        </div>
+        
+        {/* Footer Thanks */}
+        <div style={{ marginTop: '80px', textAlign: 'center', borderTop: '1px solid #222', paddingTop: '40px' }}>
           <h2 style={{
-            fontFamily: "'Inter', sans-serif",
-            fontSize: '16px',
-            fontWeight: 800,
+            fontFamily: "'Bebas Neue', sans-serif",
+            fontSize: '32px',
             color: '#FFFFFF',
-            letterSpacing: '0.1em',
-            textTransform: 'uppercase'
+            letterSpacing: '0.05em'
           }}>
-            THANKS FOR WATCHING!
+            THANKS FOR <span style={{ color: '#FFB400' }}>PATIENCE!</span>
           </h2>
         </div>
       </div>

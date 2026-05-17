@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Github, Linkedin, Mail } from 'lucide-react';
+import { Github, Linkedin, Mail, Settings, Cpu, MapPin } from 'lucide-react';
 
 export default function Hero() {
   return (
@@ -7,122 +7,160 @@ export default function Hero() {
       id="hero"
       className="relative w-full flex items-center justify-center overflow-hidden"
       style={{
-        height: '100vh',
-        backgroundColor: '#1E1F22', // Match the dark grey of the reference
+        minHeight: '100vh',
+        backgroundColor: '#000000',
+        padding: '0 5%'
       }}
     >
-      {/* Top Left Logo and Top Right Links are handled by Navbar, assuming Navbar is transparent and over this */}
-
-      {/* Center Content */}
-      <div className="flex flex-col items-center justify-center z-10 text-center">
-        <motion.p
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          style={{
-            fontFamily: "'Inter', sans-serif",
-            fontSize: '11px',
-            letterSpacing: '0.2em',
-            color: '#A0A0A0',
-            marginBottom: '20px',
-            textTransform: 'uppercase'
-          }}
-        >
-          // PORTFOLIO
-        </motion.p>
+      <div className="w-full max-w-[1200px] flex flex-col md:flex-row items-center justify-between z-10 gap-12">
         
-        <motion.h1
-          initial={{ opacity: 0, scale: 0.95 }}
+        {/* Left Content */}
+        <div className="flex-1 text-left">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            style={{
+              fontFamily: "'Bebas Neue', sans-serif",
+              fontSize: '48px',
+              color: '#FFB400',
+              lineHeight: 1,
+              marginBottom: '16px',
+              letterSpacing: '0.05em'
+            }}
+          >
+            HI THERE!
+          </motion.h2>
+
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            style={{
+              fontFamily: "'Bebas Neue', sans-serif",
+              fontSize: 'clamp(4rem, 8vw, 7rem)',
+              color: '#FFFFFF',
+              lineHeight: 1,
+              marginBottom: '24px',
+              letterSpacing: '0.05em'
+            }}
+          >
+            I'M <span style={{ color: 'transparent', WebkitTextStroke: '2px #FFB400' }}>SHREYA</span>
+          </motion.h1>
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            style={{
+              background: '#FFB400',
+              color: '#000000',
+              padding: '8px 16px',
+              display: 'inline-block',
+              fontFamily: "'Inter', sans-serif",
+              fontSize: '14px',
+              fontWeight: 800,
+              textTransform: 'uppercase',
+              letterSpacing: '0.1em',
+              marginBottom: '32px'
+            }}
+          >
+            ROBOTICS AND AUTOMATION ENGINEER
+          </motion.div>
+
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+            style={{
+              fontFamily: "'Inter', sans-serif",
+              fontSize: '14px',
+              color: '#AAAAAA',
+              lineHeight: 1.8,
+              maxWidth: '500px',
+              marginBottom: '40px'
+            }}
+          >
+            Engineering intelligent systems from concept to prototype. Passionate about robotics, 
+            CAD design, and IoT integration. Ready to handle your next innovative project.
+          </motion.p>
+
+          <motion.a
+            href="#about"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.6 }}
+            style={{
+              display: 'inline-block',
+              background: '#111111',
+              color: '#FFFFFF',
+              border: '2px solid #FFB400',
+              padding: '16px 40px',
+              fontFamily: "'Inter', sans-serif",
+              fontSize: '13px',
+              fontWeight: 700,
+              letterSpacing: '0.1em',
+              textTransform: 'uppercase',
+              textDecoration: 'none',
+              borderRadius: '30px',
+              transition: 'all 0.3s',
+              cursor: 'pointer'
+            }}
+            className="hover:bg-[#FFB400] hover:text-[#000000]"
+          >
+            MORE ABOUT ME
+          </motion.a>
+        </div>
+
+        {/* Right Circle Image & Icons */}
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-          style={{
-            fontFamily: "'Inter', sans-serif",
-            fontSize: 'clamp(3rem, 10vw, 8rem)',
-            fontWeight: 800,
-            color: '#FFFFFF',
-            lineHeight: 1,
-            letterSpacing: '-0.02em',
-            margin: '0 0 16px 0'
-          }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+          className="flex-1 relative flex justify-center items-center"
+          style={{ minHeight: '500px' }}
         >
-          SHREYA ADE
-        </motion.h1>
+          {/* Circular image */}
+          <div style={{
+            width: '400px',
+            height: '400px',
+            borderRadius: '50%',
+            overflow: 'hidden',
+            border: '4px solid #111111',
+            boxShadow: '0 0 40px rgba(255, 180, 0, 0.1)',
+            position: 'relative',
+            zIndex: 2
+          }}>
+            <img 
+              src="/src/assets/shreya-profile.jpeg" 
+              alt="Shreya Ade" 
+              style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+              onError={(e) => { e.target.style.display = 'none'; }}
+            />
+          </div>
 
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          style={{
-            fontFamily: "'Inter', sans-serif",
-            fontSize: '11px',
-            letterSpacing: '0.3em',
-            color: '#A0A0A0',
-            textTransform: 'uppercase'
-          }}
-        >
-          ROBOTICS AND AUTOMATION ENGINEER
-        </motion.p>
+          {/* Decorative semi-circle ring */}
+          <div style={{
+            position: 'absolute',
+            width: '480px',
+            height: '480px',
+            border: '2px solid #FFB400',
+            borderRadius: '50%',
+            borderLeftColor: 'transparent',
+            borderBottomColor: 'transparent',
+            transform: 'rotate(45deg)',
+            zIndex: 1
+          }}></div>
+
+          {/* Icons on the ring */}
+          <div style={{ position: 'absolute', width: '480px', height: '480px', zIndex: 3, pointerEvents: 'none' }}>
+            <div style={{ position: 'absolute', top: '10%', right: '15%', background: '#111111', padding: '12px', borderRadius: '50%', color: '#FFB400', border: '1px solid #333' }}><Settings size={20} /></div>
+            <div style={{ position: 'absolute', top: '45%', right: '-5%', background: '#111111', padding: '12px', borderRadius: '50%', color: '#FFB400', border: '1px solid #333' }}><Cpu size={20} /></div>
+            <div style={{ position: 'absolute', bottom: '15%', right: '10%', background: '#111111', padding: '12px', borderRadius: '50%', color: '#FFB400', border: '1px solid #333' }}><MapPin size={20} /></div>
+          </div>
+        </motion.div>
+
       </div>
-
-      {/* Left Social Links (Vertical) */}
-      <motion.div
-        initial={{ opacity: 0, x: -20 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ delay: 0.6, duration: 0.8 }}
-        className="absolute left-8 md:left-12 bottom-12 md:bottom-auto md:top-1/2 md:-translate-y-1/2 flex md:flex-col gap-6 z-10"
-      >
-        <a href="https://github.com" target="_blank" rel="noopener noreferrer" style={{ color: '#A0A0A0', transition: 'color 0.3s' }} className="hover:text-white">
-          <Github size={16} />
-        </a>
-        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" style={{ color: '#A0A0A0', transition: 'color 0.3s' }} className="hover:text-white">
-          <Linkedin size={16} />
-        </a>
-        <a href="mailto:shreya@example.com" style={{ color: '#A0A0A0', transition: 'color 0.3s' }} className="hover:text-white">
-          <Mail size={16} />
-        </a>
-      </motion.div>
-
-      {/* Right Scroll Indicator (Vertical) */}
-      <motion.div
-        initial={{ opacity: 0, x: 20 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ delay: 0.8, duration: 0.8 }}
-        className="absolute right-8 md:right-12 bottom-12 md:bottom-auto md:top-1/2 md:-translate-y-1/2 flex items-center md:flex-col gap-4 z-10"
-      >
-        <span
-          style={{
-            fontFamily: "'Inter', sans-serif",
-            fontSize: '10px',
-            letterSpacing: '0.2em',
-            color: '#A0A0A0',
-            transform: 'rotate(90deg)',
-            transformOrigin: 'right center',
-            whiteSpace: 'nowrap',
-            display: 'block',
-            marginTop: '20px' // offset for rotation
-          }}
-          className="hidden md:block"
-        >
-          SCROLL
-        </span>
-        <div 
-          className="hidden md:block"
-          style={{
-            width: '1px',
-            height: '40px',
-            background: '#A0A0A0',
-            marginTop: '30px'
-          }}
-        />
-        <div 
-          className="md:hidden"
-          style={{
-            width: '40px',
-            height: '1px',
-            background: '#A0A0A0',
-          }}
-        />
-      </motion.div>
     </section>
   );
 }
