@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import Hero from './components/Hero';
-import Profile from './components/Profile';
+import About from './components/About';
+import Resume from './components/Resume';
 import Gallery from './components/Gallery';
 import Contact from './components/Contact';
 import Navbar from './components/Navbar';
@@ -35,7 +36,8 @@ export default function App() {
           <Navbar />
           <main>
             <Hero />
-            <Profile />
+            <About />
+            <Resume />
             <Gallery />
             <Contact />
           </main>

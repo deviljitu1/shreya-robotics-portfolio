@@ -14,7 +14,7 @@ export default function Navbar() {
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-      className="fixed top-0 left-0 w-full z-50 px-8 py-8 md:px-12 md:py-10 flex justify-between items-center mix-blend-difference"
+      className="fixed top-0 left-0 w-full z-50 px-8 py-8 md:px-12 md:py-10 flex flex-col md:flex-row justify-between items-center mix-blend-difference"
       aria-label="Main navigation"
     >
       <div 
@@ -24,8 +24,10 @@ export default function Navbar() {
           fontWeight: 800,
           color: '#FFFFFF',
           letterSpacing: '0.05em',
-          cursor: 'pointer'
+          cursor: 'pointer',
+          marginBottom: '20px'
         }}
+        className="md:mb-0"
         onClick={(e) => handleNavClick(e, 'hero')}
       >
         SA
@@ -34,10 +36,10 @@ export default function Navbar() {
         </div>
       </div>
 
-      <div className="flex gap-8">
+      <div className="flex flex-wrap justify-center gap-6 md:gap-8">
         <a
-          href="#profile"
-          onClick={(e) => handleNavClick(e, 'profile')}
+          href="#hero"
+          onClick={(e) => handleNavClick(e, 'hero')}
           style={{
             fontFamily: "'Inter', sans-serif",
             fontSize: '10px',
@@ -48,9 +50,43 @@ export default function Navbar() {
             textDecoration: 'none',
             transition: 'opacity 0.3s'
           }}
-          className="hover:opacity-60 hidden md:block"
+          className="hover:opacity-60"
         >
-          PROFILE
+          HOME
+        </a>
+        <a
+          href="#about"
+          onClick={(e) => handleNavClick(e, 'about')}
+          style={{
+            fontFamily: "'Inter', sans-serif",
+            fontSize: '10px',
+            fontWeight: 500,
+            letterSpacing: '0.2em',
+            color: '#FFFFFF',
+            textTransform: 'uppercase',
+            textDecoration: 'none',
+            transition: 'opacity 0.3s'
+          }}
+          className="hover:opacity-60"
+        >
+          ABOUT ME
+        </a>
+        <a
+          href="#resume"
+          onClick={(e) => handleNavClick(e, 'resume')}
+          style={{
+            fontFamily: "'Inter', sans-serif",
+            fontSize: '10px',
+            fontWeight: 500,
+            letterSpacing: '0.2em',
+            color: '#FFFFFF',
+            textTransform: 'uppercase',
+            textDecoration: 'none',
+            transition: 'opacity 0.3s'
+          }}
+          className="hover:opacity-60"
+        >
+          RESUME
         </a>
         <a
           href="#gallery"
@@ -67,7 +103,7 @@ export default function Navbar() {
           }}
           className="hover:opacity-60"
         >
-          PROJECTS
+          PORTFOLIO
         </a>
         <a
           href="#contact"
