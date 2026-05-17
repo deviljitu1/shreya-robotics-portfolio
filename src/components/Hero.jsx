@@ -10,7 +10,7 @@ export default function Hero() {
       style={{
         minHeight: '100vh',
         backgroundColor: '#000000',
-        padding: '0 5%'
+        padding: 'clamp(100px, 15vh, 160px) 5% clamp(60px, 8vh, 100px) 5%'
       }}
     >
       <div className="w-full max-w-[1200px] flex flex-col md:flex-row items-center justify-between z-10 gap-12">

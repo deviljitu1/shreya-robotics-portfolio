@@ -8,10 +8,9 @@ export default function About() {
   ];
 
   const funFacts = [
-    { count: '4+', label: 'YEARS STUDY' },
-    { count: '10+', label: 'PROJECTS DONE' },
-    { count: '15+', label: 'TECH SKILLS' },
-    { count: '3+', label: 'AWARDS WON' }
+    { count: 'Done', label: 'Graduation' },
+    { count: '5+', label: 'Projects' },
+    { count: '4+', label: 'Tech Skills' }
   ];
 
   return (
@@ -119,10 +118,10 @@ export default function About() {
             </h4>
             
             <div style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(2, 1fr)',
+              display: 'flex',
+              flexWrap: 'wrap',
               gap: '24px',
-              justifyItems: 'center'
+              justifyContent: 'center'
             }}>
               {funFacts.map((fact, idx) => (
                 <div key={idx} style={{

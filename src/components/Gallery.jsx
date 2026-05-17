@@ -14,6 +14,9 @@ import cycle1 from '../assets/Portfolio Design/Cycle/IMG-20260510-WA0012.jpg';
 import cycle2 from '../assets/Portfolio Design/Cycle/IMG-20260510-WA0013(1).jpg';
 import cycle3 from '../assets/Portfolio Design/Cycle/IMG-20260510-WA0014(1).jpg';
 import cycle4 from '../assets/Portfolio Design/Cycle/IMG-20260510-WA0015(1).jpg';
+import cycle5 from '../assets/Portfolio Design/Cycle/Img3.jpg';
+import cycle6 from '../assets/Portfolio Design/Cycle/Img4.jpg';
+import cycle7 from '../assets/Portfolio Design/Cycle/Img5.jpg';
 import cycleVid from '../assets/Portfolio Design/Cycle/VID-20260510-WA0016.mp4';
 
 import rc1 from '../assets/Portfolio Design/RC car arena/IMG-20250627-WA0007(1).jpg';
@@ -31,7 +34,7 @@ const galleryItems = [
     title: 'CYCLE DESIGN & MODELING',
     category: 'CAD DESIGN',
     description: '3D modeling and structural design of a modern bicycle. Showcases detailed front, back, and side profiles along with mechanical integration.',
-    images: [cycle1, cycle2, cycle3, cycle4, cycleVid]
+    images: [cycle1, cycle2, cycle3, cycle4, cycle5, cycle6, cycle7, cycleVid]
   },
   {
     id: 3,
