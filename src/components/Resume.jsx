@@ -3,8 +3,8 @@ export default function Resume() {
     {
       period: '2022 - 2026',
       title: 'BE. Robotics and Automation',
-      school: 'Madras Institute of Technology',
-      desc: '7.68 CGPA (8.41 GPA)'
+      school: 'Madras Institute of Technology, Anna University',
+      desc: '7.68 CGPA | 8.41 GPA'
     },
     {
       period: '12th Grade',
@@ -25,7 +25,7 @@ export default function Resume() {
       period: '1 June - 30 June',
       title: 'Mechanical Intern',
       company: 'Indroyd Labs Pune',
-      desc: 'Research and design of DNA Kinetics, Rotoscope, and Matrix wall using Solidworks CAD Software.'
+      desc: 'Research and design of DNA Kinetics (rotating screen), Rotoscope (horizontal screen movement) and on Matrix wall using Solidworks CAD Software.'
     }
   ];
 
@@ -125,8 +125,8 @@ export default function Resume() {
         </div>
 
         {/* Skills Section (Using dark shiny blocks) */}
-        <div className="flex flex-col md:flex-row gap-12">
-          <div className="flex-1">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
+          <div>
             <h4 style={{
               display: 'inline-block',
               backgroundColor: '#FFB400',
@@ -136,12 +136,53 @@ export default function Resume() {
               fontSize: '14px',
               fontWeight: 800,
               borderRadius: '20px',
-              marginBottom: '32px'
+              marginBottom: '24px'
             }}>
               TECHNICAL SKILLS
             </h4>
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '12px' }}>
-              {['SOLIDWORKS', 'PLC', 'CATIA', 'PYTHON', 'RASPBERRY PI', 'ESP32', 'ARDUINO', 'BLYNK', 'SENSOR INTEGRATION', 'IoT'].map(skill => (
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
+              {[
+                'SOLIDWORKS (ASSEMBLY, ANALYSIS & SIMULATION)', 
+                'PLC', 
+                'CATIA ( PART DESIGN )', 
+                'PYTHON (PROBLEM SOLVING)', 
+                'Embedded Systems & IoT - Raspberry Pi, ESP32, Arduino, Blynk, Sensor Integration'
+              ].map(skill => (
+                <span key={skill} style={{
+                  backgroundColor: '#111111',
+                  border: '1px solid #333',
+                  padding: '8px 16px',
+                  borderRadius: '4px',
+                  fontFamily: "'Inter', sans-serif",
+                  fontSize: '12px',
+                  color: '#FFFFFF',
+                  fontWeight: 500
+                }}>
+                  {skill}
+                </span>
+              ))}
+            </div>
+            
+            <h4 style={{
+              display: 'inline-block',
+              backgroundColor: '#FFB400',
+              color: '#000000',
+              padding: '6px 20px',
+              fontFamily: "'Inter', sans-serif",
+              fontSize: '14px',
+              fontWeight: 800,
+              borderRadius: '20px',
+              marginTop: '32px',
+              marginBottom: '24px'
+            }}>
+              ADDITIONAL SKILLS
+            </h4>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
+              {[
+                'PRESENTATION DESIGN (POWERPOINT, CANVA)', 
+                'MS WORD', 
+                'VIDEO EDITING (CLIPCHAMP)'
+              ].map(skill => (
                 <span key={skill} style={{
                   backgroundColor: '#111111',
                   border: '1px solid #333',
@@ -158,7 +199,7 @@ export default function Resume() {
             </div>
           </div>
 
-          <div className="flex-1">
+          <div>
             <h4 style={{
               display: 'inline-block',
               backgroundColor: '#FFB400',
@@ -168,16 +209,52 @@ export default function Resume() {
               fontSize: '14px',
               fontWeight: 800,
               borderRadius: '20px',
-              marginBottom: '32px'
+              marginBottom: '24px'
             }}>
-              ACHIEVEMENTS
+              LANGUAGES
+            </h4>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px', marginBottom: '32px' }}>
+              {[
+                'ENGLISH (fluent)', 
+                'HINDI (fluent)', 
+                'MARATHI (fluent)', 
+                'TAMIL (intermediate)'
+              ].map(lang => (
+                <span key={lang} style={{
+                  backgroundColor: '#111111',
+                  border: '1px solid #333',
+                  padding: '8px 16px',
+                  borderRadius: '4px',
+                  fontFamily: "'Inter', sans-serif",
+                  fontSize: '12px',
+                  color: '#FFFFFF',
+                  fontWeight: 500
+                }}>
+                  {lang}
+                </span>
+              ))}
+            </div>
+
+            <h4 style={{
+              display: 'inline-block',
+              backgroundColor: '#FFB400',
+              color: '#000000',
+              padding: '6px 20px',
+              fontFamily: "'Inter', sans-serif",
+              fontSize: '14px',
+              fontWeight: 800,
+              borderRadius: '20px',
+              marginBottom: '24px'
+            }}>
+              CERTIFICATES & ACHIEVEMENTS
             </h4>
             <ul style={{ listStyleType: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '16px' }}>
               {[
                 'Winner – TNWISE Hackathon 2025 (Adaptive Wheelchair)',
                 'Shortlisted – SIH Internal Hackathon 2024 (Water Cleaning Bot)',
                 'NSS Best Volunteer Award 2023',
-                'Conference Presentation - NCAIDT'
+                '2nd Place – Campaigning Contest (College Club)',
+                'Conference Presentation - National Conference on AI, IoT & Data-Driven (NCAIDT)'
               ].map((achievement, i) => (
                 <li key={i} style={{ 
                   fontFamily: "'Inter', sans-serif", 

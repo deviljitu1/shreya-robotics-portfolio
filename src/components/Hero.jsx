@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Github, Linkedin, Mail, Settings, Cpu, MapPin } from 'lucide-react';
+import profileImg from '../assets/shreya-profile.jpeg';
 
 export default function Hero() {
   return (
@@ -81,8 +82,7 @@ export default function Hero() {
               marginBottom: '40px'
             }}
           >
-            Engineering intelligent systems from concept to prototype. Passionate about robotics, 
-            CAD design, and IoT integration. Ready to handle your next innovative project.
+            I am a Robotics and Automation Engineering student with practical experience in CAD design, IoT, and robotics. I adapt easily to new environments and have a keen interest in research and problem-solving. I am dedicated to applying my full effort toward developing innovative and efficient smart systems.
           </motion.p>
 
           <motion.a
@@ -132,7 +132,7 @@ export default function Hero() {
             zIndex: 2
           }}>
             <img 
-              src="/src/assets/shreya-profile.jpeg" 
+              src={profileImg} 
               alt="Shreya Ade" 
               style={{ width: '100%', height: '100%', objectFit: 'cover' }}
               onError={(e) => { e.target.style.display = 'none'; }}

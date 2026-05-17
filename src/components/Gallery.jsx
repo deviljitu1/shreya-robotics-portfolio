@@ -5,9 +5,9 @@ import { X, ChevronLeft, ChevronRight, Maximize2 } from 'lucide-react';
 const galleryItems = [
   {
     id: 1,
-    title: 'STAIRCASE CLIMBER',
+    title: 'STAIRCASE CLIMBING ROBOT',
     category: 'ROBOTICS',
-    description: 'Built functional prototype and design of staircase climbing robot using lead screw & rack-and-pinion.',
+    description: 'Built functional prototype and design of staircase climbing robot using lead screw & rack-and-pinion for smooth vertical/horizontal transitions.',
     images: [
       'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&q=80&w=1200',
       'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=1200'
@@ -15,9 +15,9 @@ const galleryItems = [
   },
   {
     id: 2,
-    title: 'AUTONOMOUS WELDMENT',
+    title: 'AUTONOMOUS ROBOT FOR POST FLAT SURFACING OF WELDMENTS',
     category: 'ROBOTICS',
-    description: 'Designed and developed a robotic system with a burnishing roller for weld surface finishing.',
+    description: 'Designed and developed a robotic system with a burnishing roller for weld surface finishing. Focused on counterclockwise motion cancellation of force and reduction of vibration.',
     images: [
       'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1200',
       'https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80&w=1200'
@@ -25,9 +25,9 @@ const galleryItems = [
   },
   {
     id: 3,
-    title: 'ADAPTIVE WHEELCHAIR',
+    title: 'ADAPTIVE WHEEL CHAIR',
     category: 'CAD DESIGN',
-    description: 'TNWISE Hackathon 2025 Winner. Designed an adaptive wheelchair with interchangeable seats.',
+    description: 'TNWISE Hackathon 2025. Designed an adaptive wheelchair with interchangeable seats and additional support features to assist differently-abled users. Focused on ergonomic design and sensor-based movement assistance.',
     images: [
       'https://images.unsplash.com/photo-1579546929518-9e396f3cc809?auto=format&fit=crop&q=80&w=1200',
       'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1200'
@@ -35,9 +35,9 @@ const galleryItems = [
   },
   {
     id: 4,
-    title: 'CNN LEAF ANALYSIS',
+    title: 'CNN-BASED LEAF IMAGE ANALYSIS',
     category: 'IoT',
-    description: 'Presented a CNN model for plant disease detection using MobilenetV2.',
+    description: 'Presented a CNN model for plant disease detection using MobilenetV2 pretrained data at the National Conference on AI, IoT & Data-Driven Transformation (NCAIDT 2025).',
     images: [
       'https://images.unsplash.com/photo-1530836369250-ef71a3f5e48d?auto=format&fit=crop&q=80&w=1200',
       'https://images.unsplash.com/photo-1555626906-fcf10d6851b4?auto=format&fit=crop&q=80&w=1200'
@@ -45,9 +45,9 @@ const galleryItems = [
   },
   {
     id: 5,
-    title: 'IoT SOIL MOISTURE',
+    title: 'IoT SOIL MOISTURE SYSTEM',
     category: 'IoT',
-    description: 'ESP32 + Blynk-based irrigation automation with real-time monitoring.',
+    description: 'ESP32 + Blynk-based irrigation automation with real-time monitoring. Implementation of various sensor using Raspberry Pi 4 (Microprocessor) & Arduino Uno (Microcontroller).',
     images: [
       'https://images.unsplash.com/photo-1592484022853-432a52ce4c7a?auto=format&fit=crop&q=80&w=1200',
       'https://images.unsplash.com/photo-1592659762303-90081d34b277?auto=format&fit=crop&q=80&w=1200'

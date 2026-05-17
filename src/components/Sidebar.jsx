@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Home, User, FileText, Briefcase, Mail } from 'lucide-react';
+import profileImg from '../assets/shreya-profile.jpeg';
 
 export default function Sidebar({ activeSection, setActiveSection }) {
   const navItems = [
@@ -46,7 +47,7 @@ export default function Sidebar({ activeSection, setActiveSection }) {
           }}
         >
           <img 
-            src="/src/assets/shreya-profile.jpeg" 
+            src={profileImg} 
             alt="Shreya Ade" 
             style={{ width: '100%', height: '100%', objectFit: 'cover' }}
             onError={(e) => { e.target.style.display = 'none'; }}
