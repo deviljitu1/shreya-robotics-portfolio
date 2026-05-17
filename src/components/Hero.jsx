@@ -154,8 +154,8 @@ export default function Hero() {
         >
           {/* Circular image */}
           <div style={{
-            width: '400px',
-            height: '400px',
+            width: 'clamp(240px, 65vw, 400px)',
+            height: 'clamp(240px, 65vw, 400px)',
             borderRadius: '50%',
             overflow: 'hidden',
             border: '4px solid #111111',
@@ -174,8 +174,8 @@ export default function Hero() {
           {/* Decorative semi-circle ring */}
           <div style={{
             position: 'absolute',
-            width: '480px',
-            height: '480px',
+            width: 'clamp(290px, 78vw, 480px)',
+            height: 'clamp(290px, 78vw, 480px)',
             border: '2px solid #FFB400',
             borderRadius: '50%',
             borderLeftColor: 'transparent',
@@ -185,7 +185,13 @@ export default function Hero() {
           }}></div>
 
           {/* Icons on the ring */}
-          <div style={{ position: 'absolute', width: '480px', height: '480px', zIndex: 3, pointerEvents: 'none' }}>
+          <div style={{
+            position: 'absolute',
+            width: 'clamp(290px, 78vw, 480px)',
+            height: 'clamp(290px, 78vw, 480px)',
+            zIndex: 3,
+            pointerEvents: 'none'
+          }}>
             <div style={{ position: 'absolute', top: '10%', right: '15%', background: '#111111', padding: '12px', borderRadius: '50%', color: '#FFB400', border: '1px solid #333' }}><Settings size={20} /></div>
             <div style={{ position: 'absolute', top: '45%', right: '-5%', background: '#111111', padding: '12px', borderRadius: '50%', color: '#FFB400', border: '1px solid #333' }}><Cpu size={20} /></div>
             <div style={{ position: 'absolute', bottom: '15%', right: '10%', background: '#111111', padding: '12px', borderRadius: '50%', color: '#FFB400', border: '1px solid #333' }}><MapPin size={20} /></div>

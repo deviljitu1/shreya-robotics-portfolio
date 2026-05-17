@@ -397,7 +397,14 @@ export default function Gallery() {
               </div>
 
               {/* Right Column - Project Details */}
-              <div className="w-full md:w-[40%] p-6 md:p-8 flex flex-col border-t md:border-t-0 md:border-l border-[#333] md:overflow-y-auto">
+              <div 
+                className="w-full md:w-[40%] flex flex-col border-t md:border-t-0 md:border-l border-[#333] md:overflow-y-auto"
+                style={{
+                  padding: '36px 28px',
+                  display: 'flex',
+                  flexDirection: 'column'
+                }}
+              >
                 <span style={{
                   fontFamily: "'Inter', sans-serif",
                   fontSize: '12px',
