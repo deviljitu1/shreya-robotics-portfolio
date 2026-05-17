@@ -50,15 +50,8 @@ const galleryItems = [
 ];
 
 export default function Gallery() {
-  const [filter, setFilter] = useState('ALL');
   const [selectedProject, setSelectedProject] = useState(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-
-  const categories = ['ALL', 'ROBOTICS', 'CAD DESIGN', 'IoT'];
-
-  const filteredItems = filter === 'ALL'
-    ? galleryItems
-    : galleryItems.filter(item => item.category === filter);
 
   const openModal = (project) => {
     setSelectedProject(project);
@@ -74,6 +67,38 @@ export default function Gallery() {
   const isVideo = (url) => {
     return url && url.endsWith('.mp4');
   };
+
+  const currentIndex = selectedProject ? galleryItems.findIndex(item => item.id === selectedProject.id) : 0;
+
+  const handlePrevProject = (e) => {
+    if (e) e.stopPropagation();
+    const prevIndex = (currentIndex - 1 + galleryItems.length) % galleryItems.length;
+    setSelectedProject(galleryItems[prevIndex]);
+    setCurrentImageIndex(0);
+  };
+
+  const handleNextProject = (e) => {
+    if (e) e.stopPropagation();
+    const nextIndex = (currentIndex + 1) % galleryItems.length;
+    setSelectedProject(galleryItems[nextIndex]);
+    setCurrentImageIndex(0);
+  };
+
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (!selectedProject) return;
+      if (e.key === 'ArrowLeft') {
+        handlePrevProject();
+      } else if (e.key === 'ArrowRight') {
+        handleNextProject();
+      } else if (e.key === 'Escape') {
+        closeModal();
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [selectedProject, currentIndex]);
 
   return (
     <section id="gallery" style={{ backgroundColor: '#0A0A0A', padding: '80px 5%', minHeight: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
@@ -95,44 +120,17 @@ export default function Gallery() {
             PORTFOLIO
           </h2>
         </div>
-
-        {/* Filter Tabs */}
-        <div style={{ display: 'flex', gap: '16px', marginBottom: '40px', flexWrap: 'wrap' }}>
-          {categories.map(cat => (
-            <button
-              key={cat}
-              onClick={() => setFilter(cat)}
-              style={{
-                background: filter === cat ? '#FFB400' : 'transparent',
-                color: filter === cat ? '#000000' : '#AAAAAA',
-                border: filter === cat ? '1px solid #FFB400' : '1px solid #333',
-                padding: '8px 24px',
-                borderRadius: '20px',
-                fontFamily: "'Inter', sans-serif",
-                fontSize: '12px',
-                fontWeight: 700,
-                letterSpacing: '0.1em',
-                cursor: 'pointer',
-                transition: 'all 0.3s'
-              }}
-              className={filter !== cat ? 'hover:border-[#FFB400] hover:text-[#FFB400]' : ''}
-            >
-              {cat}
-            </button>
-          ))}
-        </div>
-
         {/* Grid */}
         <motion.div
           layout
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
+            gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
             gap: '24px'
           }}
         >
           <AnimatePresence>
-            {filteredItems.map(item => (
+            {galleryItems.map(item => (
               <motion.div
                 layout
                 initial={{ opacity: 0, scale: 0.9 }}
@@ -231,6 +229,7 @@ export default function Gallery() {
         </motion.div>
       </div>
 
+
       {/* E-commerce Style Lightbox Modal */}
       <AnimatePresence>
         {selectedProject && (
@@ -247,7 +246,7 @@ export default function Gallery() {
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              padding: '20px',
+              padding: '16px',
               overflowY: 'auto'
             }}
           >
@@ -269,7 +268,7 @@ export default function Gallery() {
                 cursor: 'pointer',
                 zIndex: 100000
               }}
-              className="hover:text-[#FFB400] transition-colors"
+              className="hover:text-[#FFB400] hover:border-[#FFB400] transition-colors"
             >
               <X size={24} />
             </button>
@@ -279,31 +278,85 @@ export default function Gallery() {
               animate={{ y: 0, opacity: 1 }}
               exit={{ y: 50, opacity: 0 }}
               onClick={(e) => e.stopPropagation()}
-              className="w-full max-w-[1100px] bg-[#111111] rounded-xl overflow-hidden flex flex-col md:flex-row border border-[#333] shadow-2xl relative my-8"
-              style={{ maxHeight: '90vh' }}
+              className="w-full max-w-[1100px] bg-[#111111] rounded-xl overflow-y-auto md:overflow-hidden flex flex-col md:flex-row border border-[#333] shadow-2xl relative my-4 md:my-8 max-h-[92vh] md:max-h-[85vh]"
             >
               {/* Left Column - Image Viewer */}
-              <div className="w-full md:w-[60%] flex flex-col bg-[#0A0A0A]">
-
+              <div className="w-full md:w-[60%] flex flex-col bg-[#0A0A0A] relative">
+                
                 {/* Main Active Image / Video */}
-                <div className="relative w-full flex-1 flex items-center justify-center p-4 min-h-[300px] md:min-h-[500px]">
+                <div className="relative w-full flex-1 flex items-center justify-center p-4 min-h-[260px] md:min-h-[500px]">
+                  
+                  {/* Left project arrow navigation */}
+                  <button
+                    onClick={handlePrevProject}
+                    style={{
+                      position: 'absolute',
+                      left: '12px',
+                      top: '50%',
+                      transform: 'translateY(-50%)',
+                      background: 'rgba(17,17,17,0.85)',
+                      border: '1px solid #333',
+                      borderRadius: '50%',
+                      width: '40px',
+                      height: '40px',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      color: '#FFFFFF',
+                      cursor: 'pointer',
+                      zIndex: 10,
+                      boxShadow: '0 4px 10px rgba(0,0,0,0.5)'
+                    }}
+                    className="hover:text-[#FFB400] hover:border-[#FFB400] transition-colors"
+                    title="Previous Project"
+                  >
+                    <ChevronLeft size={22} />
+                  </button>
+
                   {isVideo(selectedProject.images[currentImageIndex]) ? (
                     <video
-                      key={`main-vid-${currentImageIndex}`}
+                      key={`main-vid-${selectedProject.id}-${currentImageIndex}`}
                       src={selectedProject.images[currentImageIndex]}
                       controls
                       autoPlay
                       loop
-                      style={{ maxWidth: '100%', maxHeight: '60vh', borderRadius: '8px', boxShadow: '0 10px 30px rgba(0,0,0,0.5)' }}
+                      style={{ maxWidth: '100%', maxHeight: '55vh', borderRadius: '8px', boxShadow: '0 10px 30px rgba(0,0,0,0.5)' }}
                     />
                   ) : (
                     <img
-                      key={`main-img-${currentImageIndex}`}
+                      key={`main-img-${selectedProject.id}-${currentImageIndex}`}
                       src={selectedProject.images[currentImageIndex]}
                       alt={`${selectedProject.title} view ${currentImageIndex + 1}`}
-                      style={{ maxWidth: '100%', maxHeight: '60vh', borderRadius: '8px', objectFit: 'contain', boxShadow: '0 10px 30px rgba(0,0,0,0.5)' }}
+                      style={{ maxWidth: '100%', maxHeight: '55vh', borderRadius: '8px', objectFit: 'contain', boxShadow: '0 10px 30px rgba(0,0,0,0.5)' }}
                     />
                   )}
+
+                  {/* Right project arrow navigation */}
+                  <button
+                    onClick={handleNextProject}
+                    style={{
+                      position: 'absolute',
+                      right: '12px',
+                      top: '50%',
+                      transform: 'translateY(-50%)',
+                      background: 'rgba(17,17,17,0.85)',
+                      border: '1px solid #333',
+                      borderRadius: '50%',
+                      width: '40px',
+                      height: '40px',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      color: '#FFFFFF',
+                      cursor: 'pointer',
+                      zIndex: 10,
+                      boxShadow: '0 4px 10px rgba(0,0,0,0.5)'
+                    }}
+                    className="hover:text-[#FFB400] hover:border-[#FFB400] transition-colors"
+                    title="Next Project"
+                  >
+                    <ChevronRight size={22} />
+                  </button>
                 </div>
 
                 {/* Thumbnail Variants Strip */}
@@ -314,8 +367,8 @@ export default function Gallery() {
                         key={idx}
                         onClick={() => setCurrentImageIndex(idx)}
                         style={{
-                          width: '80px',
-                          height: '80px',
+                          width: '70px',
+                          height: '70px',
                           flexShrink: 0,
                           borderRadius: '8px',
                           overflow: 'hidden',
@@ -331,7 +384,7 @@ export default function Gallery() {
                           <>
                             <video src={mediaUrl} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                             <div className="absolute inset-0 flex items-center justify-center bg-black/40">
-                              <Play size={24} color="#FFF" />
+                              <Play size={20} color="#FFF" />
                             </div>
                           </>
                         ) : (
@@ -344,7 +397,7 @@ export default function Gallery() {
               </div>
 
               {/* Right Column - Project Details */}
-              <div className="w-full md:w-[40%] p-8 flex flex-col border-t md:border-t-0 md:border-l border-[#333] overflow-y-auto">
+              <div className="w-full md:w-[40%] p-6 md:p-8 flex flex-col border-t md:border-t-0 md:border-l border-[#333] md:overflow-y-auto">
                 <span style={{
                   fontFamily: "'Inter', sans-serif",
                   fontSize: '12px',
@@ -360,10 +413,10 @@ export default function Gallery() {
 
                 <h2 style={{
                   fontFamily: "'Bebas Neue', sans-serif",
-                  fontSize: '40px',
+                  fontSize: '36px',
                   color: '#FFFFFF',
                   lineHeight: 1.1,
-                  marginBottom: '24px',
+                  marginBottom: '20px',
                   letterSpacing: '0.02em'
                 }}>
                   {selectedProject.title}
@@ -373,7 +426,7 @@ export default function Gallery() {
                   width: '40px',
                   height: '3px',
                   backgroundColor: '#FFB400',
-                  marginBottom: '32px'
+                  marginBottom: '24px'
                 }} />
 
                 <h3 style={{
@@ -381,22 +434,22 @@ export default function Gallery() {
                   fontSize: '14px',
                   fontWeight: 700,
                   color: '#FFFFFF',
-                  marginBottom: '16px'
+                  marginBottom: '12px'
                 }}>
                   Project Overview
                 </h3>
 
                 <p style={{
                   fontFamily: "'Inter', sans-serif",
-                  fontSize: '15px',
+                  fontSize: '14px',
                   color: '#AAAAAA',
-                  lineHeight: 1.8,
-                  marginBottom: '40px'
+                  lineHeight: 1.7,
+                  marginBottom: '32px'
                 }}>
                   {selectedProject.description}
                 </p>
 
-                <div className="mt-auto pt-8 border-t border-[#222]">
+                <div className="mt-auto pt-6 border-t border-[#222]">
                   <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '13px', color: '#666' }}>
                     Variant {currentImageIndex + 1} of {selectedProject.images.length}
                   </p>
