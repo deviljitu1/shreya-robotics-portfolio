@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Github, Linkedin, Mail, Settings, Cpu, MapPin } from 'lucide-react';
+import { Github, Linkedin, Mail, Settings, Cpu, MapPin, Download } from 'lucide-react';
 import profileImg from '../assets/shreya-profile.jpeg';
 
 export default function Hero() {
@@ -85,31 +85,63 @@ export default function Hero() {
             I am a Robotics and Automation Engineering student with practical experience in CAD design, IoT, and robotics. I adapt easily to new environments and have a keen interest in research and problem-solving. I am dedicated to applying my full effort toward developing innovative and efficient smart systems.
           </motion.p>
 
-          <motion.a
-            href="#about"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
-            style={{
-              display: 'inline-block',
-              background: '#111111',
-              color: '#FFFFFF',
-              border: '2px solid #FFB400',
-              padding: '16px 40px',
-              fontFamily: "'Inter', sans-serif",
-              fontSize: '13px',
-              fontWeight: 700,
-              letterSpacing: '0.1em',
-              textTransform: 'uppercase',
-              textDecoration: 'none',
-              borderRadius: '30px',
-              transition: 'all 0.3s',
-              cursor: 'pointer'
-            }}
-            className="hover:bg-[#FFB400] hover:text-[#000000]"
-          >
-            MORE ABOUT ME
-          </motion.a>
+          <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
+            <motion.a
+              href="#about"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+              style={{
+                display: 'inline-block',
+                background: '#111111',
+                color: '#FFFFFF',
+                border: '2px solid #FFB400',
+                padding: '16px 36px',
+                fontFamily: "'Inter', sans-serif",
+                fontSize: '13px',
+                fontWeight: 700,
+                letterSpacing: '0.1em',
+                textTransform: 'uppercase',
+                textDecoration: 'none',
+                borderRadius: '30px',
+                transition: 'all 0.3s',
+                cursor: 'pointer'
+              }}
+              className="hover:bg-[#FFB400] hover:text-[#000000]"
+            >
+              MORE ABOUT ME
+            </motion.a>
+
+            <motion.a
+              href="/assets/Shreya_Ade_Resume.pdf"
+              download="Shreya_Ade_Resume.pdf"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.7 }}
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '8px',
+                background: '#FFB400',
+                color: '#000000',
+                border: '2px solid #FFB400',
+                padding: '16px 36px',
+                fontFamily: "'Inter', sans-serif",
+                fontSize: '13px',
+                fontWeight: 700,
+                letterSpacing: '0.1em',
+                textTransform: 'uppercase',
+                textDecoration: 'none',
+                borderRadius: '30px',
+                transition: 'all 0.3s',
+                cursor: 'pointer'
+              }}
+              className="hover:bg-[#111111] hover:text-[#FFFFFF]"
+            >
+              <Download size={16} />
+              DOWNLOAD RESUME
+            </motion.a>
+          </div>
         </div>
 
         {/* Right Circle Image & Icons */}

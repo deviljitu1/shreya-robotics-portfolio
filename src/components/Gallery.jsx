@@ -46,42 +46,6 @@ const galleryItems = [
     category: 'CAD DESIGN',
     description: 'Arena track design for RC car testing and racing, focusing on track dynamics, physical constraints, and robust pathway modeling.',
     images: [rc1]
-  },
-  {
-    id: 5,
-    title: 'STAIRCASE CLIMBING ROBOT',
-    category: 'ROBOTICS',
-    description: 'Built functional prototype and design of staircase climbing robot using lead screw & rack-and-pinion for smooth vertical/horizontal transitions.',
-    images: [
-      'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&q=80&w=1200'
-    ]
-  },
-  {
-    id: 6,
-    title: 'AUTONOMOUS ROBOT FOR POST FLAT SURFACING',
-    category: 'ROBOTICS',
-    description: 'Designed and developed a robotic system with a burnishing roller for weld surface finishing. Focused on counterclockwise motion cancellation of force and reduction of vibration.',
-    images: [
-      'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1200'
-    ]
-  },
-  {
-    id: 7,
-    title: 'CNN-BASED LEAF IMAGE ANALYSIS',
-    category: 'IoT',
-    description: 'Presented a CNN model for plant disease detection using MobilenetV2 pretrained data at the National Conference on AI, IoT & Data-Driven Transformation (NCAIDT 2025).',
-    images: [
-      'https://images.unsplash.com/photo-1530836369250-ef71a3f5e48d?auto=format&fit=crop&q=80&w=1200'
-    ]
-  },
-  {
-    id: 8,
-    title: 'IoT SOIL MOISTURE SYSTEM',
-    category: 'IoT',
-    description: 'ESP32 + Blynk-based irrigation automation with real-time monitoring. Implementation of various sensor using Raspberry Pi 4 (Microprocessor) & Arduino Uno (Microcontroller).',
-    images: [
-      'https://images.unsplash.com/photo-1592484022853-432a52ce4c7a?auto=format&fit=crop&q=80&w=1200'
-    ]
   }
 ];
 
