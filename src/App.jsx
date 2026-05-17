@@ -1,65 +1,44 @@
-import { useState, useEffect, useRef } from 'react';
-import Lenis from 'lenis';
-import Loader from './components/Loader';
-import Navbar from './components/Navbar';
+import { useState, useEffect } from 'react';
 import Hero from './components/Hero';
-import About from './components/About';
-import Skills from './components/Skills';
-import Projects from './components/Projects';
-import Achievements from './components/Achievements';
-import Contact from './components/Contact';
-import CustomCursor from './components/CustomCursor';
 import Gallery from './components/Gallery';
+import Contact from './components/Contact';
+import Navbar from './components/Navbar';
 
 export default function App() {
   const [loading, setLoading] = useState(true);
-  const lenisRef = useRef(null);
 
-  // Smooth scroll with Lenis
   useEffect(() => {
-    if (loading) return;
-
-    const lenis = new Lenis({
-      duration: 1.2,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      smoothWheel: true,
-    });
-    lenisRef.current = lenis;
-
-    function raf(time) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-    requestAnimationFrame(raf);
-
-    return () => {
-      lenis.destroy();
-    };
-  }, [loading]);
+    // Artificial delay for splash screen
+    const timer = setTimeout(() => setLoading(false), 2000);
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
-    <>
-      {/* Loader overlay */}
-      {loading && <Loader onComplete={() => setLoading(false)} />}
-
-      {/* Custom cursor (hidden on mobile via CSS) */}
-      <CustomCursor />
-
-      {/* Main content */}
-      {!loading && (
+    <div style={{ backgroundColor: '#1E1F22', minHeight: '100vh', color: '#FFFFFF' }}>
+      {loading ? (
+        <div style={{
+          height: '100vh', 
+          display: 'flex', 
+          justifyContent: 'center', 
+          alignItems: 'center', 
+          background: '#1E1F22',
+          fontFamily: "'Inter', sans-serif",
+          fontSize: '12px',
+          letterSpacing: '0.2em',
+          color: '#FFFFFF'
+        }}>
+          LOADING...
+        </div>
+      ) : (
         <>
           <Navbar />
           <main>
             <Hero />
-            <About />
-            <Skills />
             <Gallery />
-            <Projects />
-            <Achievements />
             <Contact />
           </main>
         </>
       )}
-    </>
+    </div>
   );
 }

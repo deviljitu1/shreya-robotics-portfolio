@@ -55,41 +55,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* ============================================
-   TEXTURE LAYERS
-   ============================================ */
-body::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  background-image: 
-    radial-gradient(circle at 1px 1px, rgba(255,255,255,0.08) 1px, transparent 0);
-  background-size: 40px 40px;
-  opacity: 0.4;
-  z-index: 0;
-  pointer-events: none;
-  animation: gridPan 30s linear infinite;
-}
-
-body::after {
-  content: '';
-  position: fixed;
-  inset: 0;
-  background: repeating-linear-gradient(
-    0deg,
-    transparent,
-    transparent 2px,
-    rgba(0, 0, 0, 0.015) 2px,
-    rgba(0, 0, 0, 0.015) 4px
-  );
-  z-index: 0;
-  pointer-events: none;
-}
-
-@keyframes gridPan {
-  0% { background-position: 0 0; }
-  100% { background-position: 40px 40px; }
-}
+/* Removed texture layers */
 
 /* ============================================
    CUSTOM CURSOR
