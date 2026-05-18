@@ -27,50 +27,28 @@ const galleryItems = [
     title: 'ADAPTIVE WHEEL CHAIR',
     category: 'CAD DESIGN',
     description: 'TNWISE Hackathon 2025. Designed an adaptive wheelchair with interchangeable seats and additional support features to assist differently-abled users. Focused on ergonomic design and sensor-based movement assistance.',
-    images: [adapt1, adapt2],
-    partOverviews: [
-      'Ergonomic Seating & Chassis Layout: 3D model showcasing the lightweight tubular frame, adjustable armrests, and high-support modular seat design designed for maximum comfort and posture correction.',
-      'Rear Propulsion & Support Mechanisms: Focus on the large drive wheels, stabilizer caster wheels, and safety anti-tip structures, engineered for enhanced stability and multi-terrain navigation.'
-    ]
+    images: [adapt1, adapt2]
   },
   {
     id: 2,
     title: 'CYCLE DESIGN & MODELING',
     category: 'CAD DESIGN',
     description: '3D modeling and structural design of a modern bicycle. Showcases detailed front, back, and side profiles along with mechanical integration.',
-    images: [cycle1, cycle2, cycle3, cycle4, cycle5, cycle6, cycle7, cycleVid],
-    partOverviews: [
-      'Full Assembly View: SolidWorks 3D model displaying the complete bicycle frame geometry, mechanical drivetrain integration, front/rear wheel alignment, and premium aerodynamic structural profile.',
-      'Drivetrain & Rear Wheel Integration: Detailed rendering of the chainstay, bottom bracket shell, crankset, chainring, and rear cassette interface, showcasing precise gear engagement and structural load paths.',
-      'Frame Geometry & Tubing: Focuses on the double-diamond frame structure including the top tube, down tube, and headtube transition, engineered for optimal stiffness-to-weight ratio and mechanical stability.',
-      'Steering Column & Front Fork: Displays the front fork design, headset assembly, stem, and handlebar integration, showcasing ergonomic control geometry and precise steering mechanics.',
-      'Wheel Profile & Spokes Layout: Highlights the aerodynamic rim profile, hub spacing, and tensioned spoke patterns designed to withstand dynamic shear and radial forces during operation.',
-      'Saddle & Seatpost Assembly: Shows the seatpost clamp, seatpost tubing, and aerodynamic saddle integration, optimized for driver ergonomics, center-of-gravity placement, and vibration damping.',
-      'Braking System & Cable Routing: Detailed presentation of the caliper mounting points, brake disc rotors, and internal/external routing paths for optimized hydraulic/mechanical braking response.',
-      '3D Rotational Simulation: 360-degree mechanical visualization animating the motion of the drivetrain, wheel rotation, and structural aerodynamic stability from multiple viewing angles.'
-    ]
+    images: [cycle1, cycle2, cycle3, cycle4, cycle5, cycle6, cycle7, cycleVid]
   },
   {
     id: 3,
     title: 'ACTUATION MECHANISMS',
     category: 'ROBOTICS',
     description: 'Design and analysis of actuation systems including detailed prototype testing and mechanical movements. Research and design involving rotating screens and horizontal screen movement.',
-    images: [act1, act2, actVid],
-    partOverviews: [
-      'Dual-Axis Rotating Platform: Exploded and assembled views of gears, servo mounts, and structural linkages enabling dynamic dual-axis rotational movement of screens.',
-      'Horizontal Linear Actuator: 3D design of linear guide rails, lead screw assembly, and stepping motor bracket, developed for quiet and precise screen sliding navigation.',
-      'Dynamic Motion Demonstration: Animation showing the synchronization of horizontal sliding and vertical rotation, validating the structural timing and stress analysis under load.'
-    ]
+    images: [act1, act2, actVid]
   },
   {
     id: 4,
     title: 'RC CAR ARENA',
     category: 'CAD DESIGN',
     description: 'Arena track design for RC car testing and racing, focusing on track dynamics, physical constraints, and robust pathway modeling.',
-    images: [rc1],
-    partOverviews: [
-      'Arena Layout & Trajectory Optimization: High-fidelity layout model of the RC racing arena, specifying physical barrier constraints, entry-exit gates, and friction-optimized driving trajectories.'
-    ]
+    images: [rc1]
   }
 ];
 
@@ -504,42 +482,7 @@ export default function Gallery() {
                   {selectedProject.description}
                 </p>
 
-                {/* Part Overview Section */}
-                {selectedProject.partOverviews && selectedProject.partOverviews[currentImageIndex] && (
-                  <div style={{ marginBottom: '28px' }}>
-                    <h3 style={{
-                      fontFamily: "'Inter', sans-serif",
-                      fontSize: '14px',
-                      fontWeight: 700,
-                      color: '#FFB400',
-                      marginBottom: '12px',
-                      display: 'flex',
-                      alignItems: 'center',
-                      gap: '8px'
-                    }}>
-                      <span style={{
-                        width: '6px',
-                        height: '6px',
-                        borderRadius: '50%',
-                        backgroundColor: '#FFB400'
-                      }} />
-                      Part Overview
-                    </h3>
-                    <p style={{
-                      fontFamily: "'Inter', sans-serif",
-                      fontSize: '13px',
-                      color: '#E0E0E0',
-                      lineHeight: 1.6,
-                      backgroundColor: 'rgba(255, 180, 0, 0.04)',
-                      borderLeft: '2px solid #FFB400',
-                      padding: '12px 16px',
-                      borderRadius: '0 8px 8px 0',
-                      margin: 0
-                    }}>
-                      {selectedProject.partOverviews[currentImageIndex]}
-                    </p>
-                  </div>
-                )}
+
 
                 <div className="mt-auto pt-6 border-t border-[#222]">
                   <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '13px', color: '#666', marginBottom: '16px' }}>
