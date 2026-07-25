@@ -1,8 +1,25 @@
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Github, Linkedin, Mail, Settings, Cpu, MapPin, Download } from 'lucide-react';
 import profileImg from '../assets/shreya-profile.jpeg';
 
 export default function Hero() {
+  const [typedText, setTypedText] = useState('');
+  const fullText = "ROBOTICS AND AUTOMATION ENGINEER";
+
+  useEffect(() => {
+    let i = 0;
+    const timer = setInterval(() => {
+      if (i < fullText.length) {
+        setTypedText(fullText.substring(0, i + 1));
+        i++;
+      } else {
+        clearInterval(timer);
+      }
+    }, 100);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <section
       id="hero"
@@ -63,10 +80,12 @@ export default function Hero() {
               fontWeight: 800,
               textTransform: 'uppercase',
               letterSpacing: '0.1em',
-              marginBottom: '32px'
+              marginBottom: '32px',
+              minHeight: '36px',
+              minWidth: '280px'
             }}
           >
-            ROBOTICS AND AUTOMATION ENGINEER
+            {typedText}<span className="animate-pulse">|</span>
           </motion.div>
 
           <motion.p

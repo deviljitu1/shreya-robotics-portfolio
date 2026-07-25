@@ -42,9 +42,12 @@ export const stats = [
 export const technicalSkills = [
   { name: "SolidWorks", icon: "🔷", category: "CAD" },
   { name: "CATIA", icon: "🔶", category: "CAD" },
+  { name: "Fusion 360", icon: "🔷", category: "CAD" },
+  { name: "3D Printing", icon: "🖨️", category: "CAD" },
   { name: "Arduino", icon: "⚡", category: "Controllers" },
   { name: "Raspberry Pi", icon: "🫐", category: "Controllers" },
   { name: "ESP32", icon: "📡", category: "Controllers" },
+  { name: "PLC", icon: "⚙️", category: "Controllers" },
   { name: "Python", icon: "🐍", category: "Code" },
   { name: "Blynk IoT", icon: "📱", category: "Code" },
   { name: "SIH", icon: "🛡️", category: "Other" },
@@ -192,6 +195,28 @@ export const achievements = [
     icon: "⭐",
     type: "award",
     color: "violet",
+  },
+  {
+    id: 4,
+    year: "2025",
+    title: "Industrial Automation with PLC",
+    subtitle: "Techgyan Technologies",
+    description:
+      "Certified in Industrial Automation with PLC through Techgyan Technologies, covering PLC Ladder Logic and automated program structures.",
+    icon: "📜",
+    type: "certification",
+    color: "amber",
+  },
+  {
+    id: 5,
+    year: "2017",
+    title: "MS-CIT",
+    subtitle: "Maharashtra State Board of Technical Education (MSBTE)",
+    description:
+      "Certification in Microsoft Office basics and computer literacy.",
+    icon: "📜",
+    type: "certification",
+    color: "cyan",
   },
 ];
 

@@ -24,10 +24,22 @@ export default function Resume() {
 
   const experience = [
     {
+      period: 'Jun 2026 - Present',
+      title: 'Junior Design and Project Engineer',
+      company: 'Tesseract',
+      desc: 'Contributing to end-to-end product development across design and manufacturing. Involved in 3D modeling and assembly design (Fusion 360), 3D scanning, reverse engineering, 3D printing, and engineering drawings.'
+    },
+    {
       period: '1 June - 30 June',
       title: 'Mechanical Intern',
       company: 'Indroyd Labs Pune',
       desc: 'Research and design of DNA Kinetics (rotating screen), Rotoscope (horizontal screen movement) and on Matrix wall using Solidworks CAD Software.'
+    },
+    {
+      period: 'Jul 2022 - Jun 2024',
+      title: 'Volunteer',
+      company: 'National Service Scheme',
+      desc: 'Dedicated 2 years to volunteering, contributing to social and community services.'
     }
   ];
 
@@ -171,7 +183,11 @@ export default function Resume() {
                 'PLC', 
                 'CATIA ( PART DESIGN )', 
                 'PYTHON (PROBLEM SOLVING)', 
-                'Embedded Systems & IoT - Raspberry Pi, ESP32, Arduino, Blynk, Sensor Integration'
+                'Embedded Systems & IoT - Raspberry Pi, ESP32, Arduino, Blynk, Sensor Integration',
+                'FUSION 360 (3D MODELING & ASSEMBLY DESIGN)',
+                '3D SCANNING & REVERSE ENGINEERING',
+                '3D PRINTING',
+                'ENGINEERING DRAWINGS'
               ].map(skill => (
                 <motion.span 
                   whileHover={{ scale: 1.05, borderColor: '#FFB400', color: '#FFB400' }}
@@ -302,7 +318,9 @@ export default function Resume() {
                 'Shortlisted – SIH Internal Hackathon 2024 (Water Cleaning Bot)',
                 'NSS Best Volunteer Award 2023',
                 '2nd Place – Campaigning Contest (College Club)',
-                'Conference Presentation - National Conference on AI, IoT & Data-Driven (NCAIDT)'
+                'Conference Presentation - National Conference on AI, IoT & Data-Driven (NCAIDT)',
+                'Industrial Automation with PLC - Techgyan (Feb 2025)',
+                'MS-CIT (Microsoft Office) - MSBTE (Sep 2017)'
               ].map((achievement, i) => (
                 <motion.li 
                   key={i} 
