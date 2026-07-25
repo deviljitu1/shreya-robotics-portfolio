@@ -9,15 +9,34 @@ export default function Hero() {
 
   useEffect(() => {
     let i = 0;
-    const timer = setInterval(() => {
-      if (i < fullText.length) {
-        setTypedText(fullText.substring(0, i + 1));
-        i++;
+    let isDeleting = false;
+    let timer;
+
+    const type = () => {
+      if (!isDeleting) {
+        if (i < fullText.length) {
+          setTypedText(fullText.substring(0, i + 1));
+          i++;
+          timer = setTimeout(type, 100);
+        } else {
+          isDeleting = true;
+          timer = setTimeout(type, 2000); // Pause at the end
+        }
       } else {
-        clearInterval(timer);
+        if (i > 0) {
+          setTypedText(fullText.substring(0, i - 1));
+          i--;
+          timer = setTimeout(type, 50); // Delete faster
+        } else {
+          isDeleting = false;
+          timer = setTimeout(type, 500); // Pause before re-typing
+        }
       }
-    }, 100);
-    return () => clearInterval(timer);
+    };
+
+    timer = setTimeout(type, 100);
+
+    return () => clearTimeout(timer);
   }, []);
 
   return (
