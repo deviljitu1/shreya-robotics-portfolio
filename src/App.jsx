@@ -218,28 +218,9 @@ export default function App() {
 
                   {/* Social Buttons */}
                   <div className="flex gap-6">
+
                     <a 
-                      href="https://github.com" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      style={{
-                        width: '44px',
-                        height: '44px',
-                        borderRadius: '50%',
-                        background: 'rgba(255, 255, 255, 0.03)',
-                        border: '1px solid rgba(255, 255, 255, 0.08)',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        color: '#FFF',
-                        transition: 'all 0.3s'
-                      }}
-                      className="hover:border-[#FFB400] hover:text-[#FFB400] hover:scale-110 active:scale-95"
-                    >
-                      <Github size={18} />
-                    </a>
-                    <a 
-                      href="https://linkedin.com" 
+                      href="https://www.linkedin.com/in/shreya-ade/" 
                       target="_blank" 
                       rel="noopener noreferrer"
                       style={{

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Home, User, FileText, Briefcase, Mail } from 'lucide-react';
+import { Home, User, FileText, Briefcase, Mail, Linkedin } from 'lucide-react';
 import profileImg from '../assets/shreya-profile.jpeg';
 
 export default function Sidebar({ activeSection, setActiveSection }) {
@@ -28,9 +28,10 @@ export default function Sidebar({ activeSection, setActiveSection }) {
       {/* Top section with avatar */}
       <div 
         style={{ 
-          height: '250px', 
+          height: '280px', 
           backgroundColor: '#1A1A1A',
           display: 'flex',
+          flexDirection: 'column',
           alignItems: 'center',
           justifyContent: 'center',
           borderBottom: '2px solid #333'
@@ -43,7 +44,8 @@ export default function Sidebar({ activeSection, setActiveSection }) {
             borderRadius: '50%', 
             overflow: 'hidden',
             border: '4px solid #FFB400',
-            boxShadow: '0 0 20px rgba(255, 180, 0, 0.2)'
+            boxShadow: '0 0 20px rgba(255, 180, 0, 0.2)',
+            marginBottom: '20px'
           }}
         >
           <img 
@@ -52,6 +54,48 @@ export default function Sidebar({ activeSection, setActiveSection }) {
             style={{ width: '100%', height: '100%', objectFit: 'cover' }}
             onError={(e) => { e.target.style.display = 'none'; }}
           />
+        </div>
+
+        {/* Social Buttons for Desktop Sidebar */}
+        <div className="flex gap-4">
+          <a 
+            href="https://www.linkedin.com/in/shreya-ade/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            style={{
+              width: '36px',
+              height: '36px',
+              borderRadius: '50%',
+              background: 'rgba(255, 255, 255, 0.05)',
+              border: '1px solid rgba(255, 255, 255, 0.1)',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              color: '#FFF',
+              transition: 'all 0.3s'
+            }}
+            className="hover:border-[#FFB400] hover:text-[#FFB400] hover:scale-110 active:scale-95"
+          >
+            <Linkedin size={16} />
+          </a>
+          <a 
+            href="mailto:shreyaade2003@gmail.com"
+            style={{
+              width: '36px',
+              height: '36px',
+              borderRadius: '50%',
+              background: 'rgba(255, 255, 255, 0.05)',
+              border: '1px solid rgba(255, 255, 255, 0.1)',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              color: '#FFF',
+              transition: 'all 0.3s'
+            }}
+            className="hover:border-[#FFB400] hover:text-[#FFB400] hover:scale-110 active:scale-95"
+          >
+            <Mail size={16} />
+          </a>
         </div>
       </div>
 
