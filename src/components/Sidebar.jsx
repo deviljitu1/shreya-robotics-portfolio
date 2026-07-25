@@ -3,6 +3,13 @@ import { motion } from 'framer-motion';
 import { Home, User, FileText, Briefcase, Mail, Linkedin } from 'lucide-react';
 import profileImg from '../assets/shreya-profile.jpeg';
 
+const WhatsappIcon = ({ size }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21"></path>
+    <path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1a5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1"></path>
+  </svg>
+);
+
 export default function Sidebar({ activeSection, setActiveSection }) {
   const navItems = [
     { id: 'hero', label: 'HOME', icon: Home },
@@ -95,6 +102,26 @@ export default function Sidebar({ activeSection, setActiveSection }) {
             className="hover:border-[#FFB400] hover:text-[#FFB400] hover:scale-110 active:scale-95"
           >
             <Mail size={16} />
+          </a>
+          <a 
+            href="https://wa.me/917020690901"
+            target="_blank" 
+            rel="noopener noreferrer"
+            style={{
+              width: '36px',
+              height: '36px',
+              borderRadius: '50%',
+              background: 'rgba(255, 255, 255, 0.05)',
+              border: '1px solid rgba(255, 255, 255, 0.1)',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              color: '#FFF',
+              transition: 'all 0.3s'
+            }}
+            className="hover:border-[#FFB400] hover:text-[#FFB400] hover:scale-110 active:scale-95"
+          >
+            <WhatsappIcon size={16} />
           </a>
         </div>
       </div>
