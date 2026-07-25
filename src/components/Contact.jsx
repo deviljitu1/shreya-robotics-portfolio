@@ -168,7 +168,7 @@ export default function Contact() {
               </div>
               <h4 style={{ fontFamily: "'Inter', sans-serif", fontSize: '14px', fontWeight: 700, color: '#FFFFFF', marginBottom: '8px' }}>Location</h4>
               <a 
-                href="https://maps.google.com/?q=Pune, Maharashtra, India" 
+                href="https://maps.google.com/?q=Mumbai, Maharashtra, India" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 style={{ 
@@ -180,7 +180,7 @@ export default function Contact() {
                 }}
                 className="hover:text-[#FFB400]"
               >
-                Pune, Maharashtra, India
+                Mumbai, Maharashtra, India
               </a>
             </motion.div>
 
